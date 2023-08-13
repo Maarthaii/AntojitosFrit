@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Quicksand:wght@300;700&display=swap');
+
+
+
+* {
+    margin: 0px;
+    font-family: 'Quicksand', sans-serif;
+}
+h1{
+    font-size: 2rem;
+}
+.nav_superior{
+    display: flex;
+    position: sticky;
+    background-color: rgb(255, 255, 255);
+    height: 9vh;
+    width: 100vw;
+    top: 0px;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 3px 3px 6px rgba(33, 33, 37, 0.616);
+    z-index: 1;
+}
+.nav_superior span{
+    margin: 0 10px;
+}
+#titulo {
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    position:absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+    
+}
+#titulo h1{
+    margin: 0px;
+    
+}
+.fondo{
+    width: 100vw;
+}
+/*Video de fondo*/
+.video{
+    width:100vw;
+    object-fit: cover;
+    opacity: 0.5;
+}
+.prueba{
+    position: absolute;
+    top: 15vh;
+    left: 50vw;
+    width: 340px;
+    height: 365px;
+    background-image: url("/multimedia/Logo.png"); /* Cambia la ruta por la imagen que desees */
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+}
