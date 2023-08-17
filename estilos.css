@@ -22,6 +22,10 @@
     margin: 0 10px;
     cursor: pointer;
 }
+.nav_superior a{
+    text-decoration: none;
+    color: black;
+}
 .nav_superior h1{
     cursor:default;
 }
@@ -77,10 +81,22 @@
 }
 .product {
     text-align: center;
+    background-color: #fafafa;
+    box-shadow: 3px 5px 8px rgba(33, 33, 37, 0.616);
+    transition: transform 0.3s ease;
 }
 .product img {
     width: 100%;
     height: auto;
+    
+}
+.product img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    
+}
+.product:hover{
+    transform: scale(1.1);
 }
 .product h3 {
     margin-top: 10px;
@@ -89,31 +105,37 @@
     margin-top: 5px;
 }
 /*Busqueda*/
-form{
+.buscador form{
     display:flex;
     align-items: center;
-    
     margin: 10px;
 }
-input[type="text"] {
+.buscador input[type="text"] {
     flex:1;
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 60px;
 }
-button {
-    padding: 5px 10px;
-    background-color: #007bff;
+.buscador button {
+    padding: 2px;
+    background-color:whitesmoke;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 80px;
+    border: 1px solid #ccc;
+    margin-left: 6px;
 }
 .buscador{
     width: 100%;
+    
+}
+.buscador img{
+    width: 25px;
+    height: 25px;
 }
 /*Footer*/
 footer {
-    background-color: #333;
+    background-color:rgb(121, 121, 121);
     color: white;
     padding: 20px;
     text-align: center;
@@ -132,8 +154,7 @@ footer ul {
 }
 
 footer ul li {
-    display: inline;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 footer ul li a {
@@ -154,20 +175,30 @@ footer img{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.container1{
-    flex-basis: 30%;
     
 }
+.container1{
+    flex-basis: 50%;
+    padding-right: 35px; 
+}
+.container1 p{
+    display: inline;
+    font-family: 'Alex Brush', cursive;
+    font-size: 30px;
+    font-weight: 20;
+    gap:20px
+}
 .container2{
-    flex-basis: 40%;
-    border-left: 1px solid #ccc;
+    flex-basis: 10%;
+    border-left: 2px solid #ccc;
     padding-left: 35px;
-    gap: 10px;
+}
+.container2 img{
+    margin-bottom:20px;
 }
 .container3{
-    flex-basis: 20%;
-    border-left: 1px solid #ccc;
+    flex-basis: 30%;
+    border-left: 2px solid #ccc;
 }
 /* Evita que los contenedores se encojan demasiado */
 @media (max-width: 768px) {
@@ -178,9 +209,96 @@ footer img{
 .container {
     flex-basis: calc(100% - 20px);
     margin-bottom: 10px;
+    top:10vh;
 }
 }
 .container1 img{
     width: 100px;
-    padding-left: 35px;
+    /* padding-left: 35px;*/
+    position: relative;
+    top:10vh;
+    /*top:20%;
+    bottom: 50%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+/*Video del fonde de registro*/
+.video1{
+    width: 100vw;
+    height: 100vh;
+    position:fixed;
+    object-fit: cover;
+    opacity: 0.5;
+    margin:0;
+    padding: 0;
+}
+/*Espacio de registro*/
+.register{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color:white;
+    border-radius: 35px;
+    top: 50%;
+    left: 50%;
+    height: 20%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+}
+.register{
+    margin-top: 80px;
+    width: 400px;
+    height: 300px;
+    padding: 50px;
+    flex-direction:column;
+   
+}
+.register form{
+    display:flex;
+    align-items: center;
+    gap: 25px;
+    flex-direction:column;
+}
+.register input[type="text"] {
+    flex:1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+}
+.register button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 200px;
+    
+    }
+    .register img{
+        width: 40px;
+        position: relative;
+        
+    }
+.detalles{
+    width: 100%;
+    position: relative;
+    margin: 10vh;
+    margin-bottom: 100px;
+    display: inline-flex;
+    
+}
+.detalles img{
+    width: 100%;
+    margin: 5px;
+}
+.detalles p, h4{
+    margin: 25px;
 }
