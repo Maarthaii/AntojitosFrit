@@ -3,8 +3,9 @@
         const searchButton = document.getElementById('search-button');
         const searchResults = document.getElementById('search-results');
     
-        searchButton.addEventListener('click', function (event) {
+        searchButton.addEventListener('click', (event) => {
             event.preventDefault(); // Evita el envío del formulario
+            console.log('Click')
     
             const searchTerm = searchInput.value.toLowerCase();
             const bodyText = document.body.innerText.toLowerCase();
@@ -13,10 +14,10 @@
             let startIndex = 0;
             let index;
     
-            while ((index = bodyText.indexOf(searchTerm, startIndex)) !== -1) {
-                matches.push(index);
-                startIndex = index + searchTerm.length;
-            }
+            // while ((index = bodyText.indexOf(searchTerm, startIndex)) !== -1) {
+            //     matches.push(index);
+            //     startIndex = index + searchTerm.length;
+            // }
     
             if (matches.length > 0) {
                 let resultsHTML = '<p>Se encontraron coincidencias en los siguientes lugares:</p>';
