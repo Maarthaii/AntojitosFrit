@@ -9,45 +9,52 @@
     <link rel="stylesheet" href="productos.css">
 </head>
 <body>
-    <!--Encabezado-->
-    <div class="nav_superior">
-        <!--Navegadores-->
-        <span id="titulo"> 
-            <h1 >Antojitos Frit</h1>
-        </span>
-        <span><a href="inicio.html">Inicio</a></span>
-        <span><p>Catalogo</p></span>
-        <span><p>Carrito</p></span>
-        <span><a href="registro.html">Registrate</a></span>
-        <span><a href="iniciar_sesion.html">Iniciar sesion</a><span>
-    </div>
-    <!--Buscador-->
+<!--Encabezado-->
+    <header class="header">
+        <nav class="nav">
+            <span id="titulo"> 
+                Antojitos Frit
+            </span>
+            <!--Navegadores-->
+            <ul class="nav__list">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/catalogo.html">Catalogo</a></li>
+                <li><a href="/">Carrito</a></li>
+                <li><a href="/registro.html">Registrate</a></li>
+                <li><a href="/iniciar_sesion.html">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+<!--Buscador-->
     <div class="buscador">
         <form>
-            <input type="text" placeholder="Buscar..." name="Busqueda">
-            <button id="search-button" type="button"><img src="/multimedia/lupa.png" alt="Buscar"></button>
+            <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
+            <button id="search-button" type="button"><img src="/img/lupa.png" alt="Buscar"></button>
         </form>
     </div>
-    <!--Galeria de productos-->
+    <div id="search-results"></div>
+    <script src="script.js"></script>
+<!----Galeria de productos----->
     <div class="galeria"> 
+        <!--Productos-->
         <div class="productos"> 
             <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 1</h4> </br></br>
+            <h4>Producto 1</h4>
             <p>COP 89</p>
         </div>
         <div class="productos"> 
             <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 2</h4> </br></br>
+            <h4>Producto 2</h4>
             <p>COP 89</p>
         </div>
         <div class="productos"> 
             <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 3</h4> </br></br>
+            <h4>Producto 3</h4>
             <p>COP 89</p>
         </div>
         <div class="productos"> 
             <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 4</h4> </br></br>
+            <h4>Producto 4</h4>
             <p>COP 89</p>
         </div>
         <div class="productos"> 
@@ -60,27 +67,27 @@
             <h4>Producto 6</h4>
             <p>COP 89</p>
         </div>
-    </div>
+        </div>
 <!--Pie de pagina-->
 <footer>
     <div class="contenedores">
         <div class="contenedor1">
             <img src="/img/Logo.png">
-            <p>Deliciosos tequeños: ¡Una explosion de sabor en cada modisco!</p>
+            <p>Deliciosos Deditos: ¡Una explosion de sabor en cada modisco!</p>
         </div>
-        <div class="contenedor2">
-            <img src="/img/instagram.png">
-            <img src="/img/whatsapp.png">
-        </div>
-        <div class="contenedor3">
-            <p>Antojitos Frit</p>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li>Acerca de</li>
-                <li>Productos</li>
-            </ul>
-        </div>
+    <div class="contenedor2">
+        <img src="/img/instagram.png">
+        <img src="/img/whatsapp.png">
     </div>
+    <div class="contenedor3">
+        <p>Antojitos Frit</p>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>Acerca de</li>
+            <li>Productos</li>
+        </ul>
+    </div>
+</div>
 </footer>
 </body>
-</html>
+</html

@@ -11,26 +11,30 @@
 </head>
 <body>
     <!--Encabezado-->
-    <div class="nav_superior">
-        <!--Navegadores-->
-        <span id="titulo"> 
-            <h1 >Antojitos Frit</h1>
-        </span>
-        <span><p>Inicio</p></span>
-        <span><a href="catalogo.html">Catalogo</a></span>
-        <span><p>Carrito</p></span>
-        <span class="salir">Cerrar Sesion</span>
-        </div>
-    
-    <!--Navegacion del usuario-->
+    <header class="header">
+        <nav class="nav">
+            <span id="titulo"> 
+                Antojitos Frit
+            </span>
+            <!--Navegadores-->
+            <ul class="nav__list">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/catalogo.html">Catalogo</a></li>
+                <li><a href="/">Carrito</a></li>
+                <li><a href="/registro.html">Registrate</a></li>
+                <li> <a class="salir" href="/">Cerrar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+<!--Navegacion del usuario-->
     <div class="nav_usuario">  
-        <!--Buscador-->
-        <div class="buscador">
-            <form>
-                <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
-                <button id="search-button" type="button"><img src="/img/lupa.png" alt="Buscar"></button>
-                    <div id="search-results"></div>
-            </form>
+<!--Buscador-->
+    <div class="buscador">
+        <form>
+            <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
+            <button id="search-button" type="button"><img src="/img/lupa.png" alt="Buscar"></button>
+        </form>
+    </div>
         </div>
         <script src="script.js"></script>
         <p>Mi carrito</p>

@@ -1,11 +1,6 @@
 /*21/08/2023*/
-/*Galeria de productos*/
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
+/*Galeria de productos
+estilo de productos y galeria en estilos.css*/
 .productos {
     text-align: center;
     background-color: #fafafa;
@@ -28,9 +23,7 @@
 .productos h3 {
     margin-top: 10px;
 }
-.productos p {
-    margin-top: 5px;
-}
+
 /*Vista de un producto*/
 .detalles{
     width: 100%;
@@ -38,7 +31,7 @@
     margin: 10vh;
     margin-bottom: 100px;
     display: inline-flex;
-}
+} 
 .detalles img{
     width: 100%;
     margin: 5px;

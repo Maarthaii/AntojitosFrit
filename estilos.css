@@ -11,7 +11,6 @@
     list-style: none;
 }
 
-
 /*Navegacion*/
 .header {
     position: sticky;
@@ -23,14 +22,12 @@
     box-shadow: 3px 3px 6px rgba(33, 33, 37, 0.616);
 }
 
-
 .nav {
     display: flex;
     padding: 20px 40px;
     align-items: center;
     justify-content: space-between;
 }
-
 
 /*Nombre Antojitos Frit*/
 .nav #titulo {
@@ -43,7 +40,6 @@
     display: flex;
     gap: 15px;
 }
-
 
 /* Jombotron de fondo */
 .jumbotron {
@@ -75,11 +71,7 @@
     max-height: 500px;
 }
 
-
-
-
 /*Busqueda*/
-
 .buscador form {
     display:flex;
     align-items: center;
@@ -108,14 +100,12 @@
     width: 25px;
     height: 25px;
 }
-/*Pie de pagina*/
-
 
 #search-results {
     padding: 20px;
     padding-top: 0;
 }
-
+/*Estilos de la galeria y productos*/
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -134,7 +124,7 @@
 .galeria .productos p {
     margin-top: 20px;
 }
-
+/*Pie de pagina*/
 footer {
     background-color:rgb(121, 121, 121);
     color: white;

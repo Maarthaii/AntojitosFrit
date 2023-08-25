@@ -1,14 +1,5 @@
 /*21/08/2023*/
-/*Video del fondo para las dos secciones relacionadas a los usuarios*/
-.video1{
-    width: 100vw;
-    height: 100vh;
-    position:fixed;
-    object-fit: cover;
-    opacity: 0.5;
-    margin:0;
-    padding: 0;
-}
+
 /*Espacio para registrarse*/
 .registro{
     display:flex;
