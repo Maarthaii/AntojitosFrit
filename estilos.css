@@ -126,6 +126,7 @@
 }
 /*Pie de pagina*/
 footer {
+    margin-top: 5px;
     background-color:rgb(121, 121, 121);
     color: white;
     padding: 20px;

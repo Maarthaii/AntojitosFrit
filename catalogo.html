@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antojitos Frit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="catalogo.css">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="productos.css">
+    <script src="catalogo.js" async></script>
+    <title>Antojitos Frit</title>
 </head>
 <body>
-<!--Encabezado-->
+    <!--Encabezado-->
     <header class="header">
         <nav class="nav">
             <span id="titulo"> 
@@ -18,14 +20,14 @@
             <!--Navegadores-->
             <ul class="nav__list">
                 <li><a href="/index.html">Inicio</a></li>
-                <li><a href="/catalogo.html">Catalogo</a></li>
-                <li><a href="/">Carrito</a></li>
+                <li><a href="">Catalogo</a></li>
                 <li><a href="/registro.html">Registrate</a></li>
                 <li><a href="/iniciar_sesion.html">Iniciar sesion</a></li>
             </ul>
         </nav>
     </header>
-<!--Buscador-->
+
+    <!--Buscador-->
     <div class="buscador">
         <form>
             <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
@@ -34,40 +36,93 @@
     </div>
     <div id="search-results"></div>
     <script src="script.js"></script>
-<!----Galeria de productos----->
-    <div class="galeria"> 
-        <!--Productos-->
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 1</h4>
-            <p>COP 89</p>
+    
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 1</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 2</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 3</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 4</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 5</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 6</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 7</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 8</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 9</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
         </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 2</h4>
-            <p>COP 89</p>
+
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+        <!--Visualizacion del contenido del carrito de compras-->
+            <div class="carrito-items">
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Total</strong>
+                    <span class="carrito-precio-total">$120.000,00</span>
+                </div>
+                <button class="btn-pagar"> Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
         </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 3</h4>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 4</h4>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 5</h4>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 6</h4>
-            <p>COP 89</p>
-        </div>
-        </div>
+    </section>
+    
 <!--Pie de pagina-->
 <footer>
     <div class="contenedores">
@@ -88,6 +143,5 @@
         </ul>
     </div>
 </div>
-</footer>
 </body>
-</html
+</html>
