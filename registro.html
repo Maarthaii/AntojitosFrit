@@ -9,24 +9,27 @@
     <link rel="stylesheet" href="inicio_usuario.css">
 </head>
 <div>
-    <!--Encabezado-->
-    <div class="nav_superior">
-        <!--Navegadores-->
-        <span id="titulo"> 
-            <h1 >Antojitos Frit</h1>
-        </span>
-        <span><a href="inicio.html">Inicio</a></span>
-        <span><a href="catalogo.html">Catalogo</a></span>
-        <span><p>Carrito</p></span>
-        <span><p>Registrate</p></span>
-        <span><a href="iniciar_sesion.html">Iniciar sesion</a><span>
-    </div>
-    <!--Fondo-->
-    <div class="fondo">
-        <video class="video1" playsinline autoplay muted loop>
-            <source src="/video/pizza.mp4" type="video/mp4">
-        </video>
-    </div>
+<!--Encabezado-->
+    <header class="header">
+        <nav class="nav">
+            <span id="titulo"> 
+                Antojitos Frit
+            </span>
+            <!--Navegadores-->
+            <ul class="nav__list">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/catalogo.html">Catalogo</a></li>
+                <li><a href="/registro.html">Registrate</a></li>
+                <li><a href="/iniciar_sesion.html">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+<!---Video y diseño de encabezado-->
+<div class="jumbotron">
+    <video class="jumbotron__video" playsinline autoplay muted loop>
+        <source src="/video/pizza.mp4" type="video/mp4">
+    </video>
+</div>
     <!--Seccion de registro-->
     <div class="registro"> 
         <img src="/img/registro.png">
