@@ -1,86 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antojitos Frit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="catalogo.css">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="productos.css">
+    <script src="catalogo.js" async></script>
+    <title>Antojitos Frit</title>
 </head>
 <body>
     <!--Encabezado-->
-    <div class="nav_superior">
-        <!--Navegadores-->
-        <span id="titulo"> 
-            <h1 >Antojitos Frit</h1>
-        </span>
-        <span><a href="inicio.html">Inicio</a></span>
-        <span><p>Catalogo</p></span>
-        <span><p>Carrito</p></span>
-        <span><a href="registro.html">Registrate</a></span>
-        <span><a href="iniciar_sesion.html">Iniciar sesion</a><span>
-    </div>
+    <header class="header">
+        <nav class="nav">
+            <span id="titulo"> 
+                Antojitos Frit
+            </span>
+            <!--Navegadores-->
+            <ul class="nav__list">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="">Catalogo</a></li>
+                <li><a href="/registro.html">Registrate</a></li>
+                <li><a href="/iniciar_sesion.html">Iniciar sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!--Buscador-->
     <div class="buscador">
         <form>
-            <input type="text" placeholder="Buscar..." name="Busqueda">
-            <button id="search-button" type="button"><img src="/multimedia/lupa.png" alt="Buscar"></button>
+            <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
+            <button id="search-button" type="button"><img src="/img/lupa.png" alt="Buscar"></button>
         </form>
     </div>
-    <!--Galeria de productos-->
-    <div class="galeria"> 
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 1</h4> </br></br>
-            <p>COP 89</p>
+    <div id="search-results"></div>
+    <script src="script.js"></script>
+    
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 1</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 2</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 3</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 4</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 5</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 6</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 7</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 8</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <img src="../img/tequeño.jpg" alt="" class="img-item">
+                <span class="titulo-item">Tequeños 9</span>
+                <span class="precio-item">$15.000</span>
+                <span class="descripcion-item"><p>Descripcion</p></span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
         </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 2</h4> </br></br>
-            <p>COP 89</p>
+
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+        <!--Visualizacion del contenido del carrito de compras-->
+            <div class="carrito-items">
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Total</strong>
+                    <span class="carrito-precio-total">$120.000,00</span>
+                </div>
+                <button class="btn-pagar"> Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
         </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 3</h4> </br></br>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 4</h4> </br></br>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 5</h4>
-            <p>COP 89</p>
-        </div>
-        <div class="productos"> 
-            <a href="productos.html" target="_blank"><img src="/img/tequeño.jpg"></a> 
-            <h4>Producto 6</h4>
-            <p>COP 89</p>
-        </div>
-    </div>
+    </section>
+    
 <!--Pie de pagina-->
 <footer>
     <div class="contenedores">
         <div class="contenedor1">
             <img src="/img/Logo.png">
-            <p>Deliciosos tequeños: ¡Una explosion de sabor en cada modisco!</p>
+            <p>Deliciosos Deditos: ¡Una explosion de sabor en cada modisco!</p>
         </div>
-        <div class="contenedor2">
-            <img src="/img/instagram.png">
-            <img src="/img/whatsapp.png">
-        </div>
-        <div class="contenedor3">
-            <p>Antojitos Frit</p>
-            <ul>
-                <li><a href="inicio.html">Inicio</a></li>
-                <li>Acerca de</li>
-                <li>Productos</li>
-            </ul>
-        </div>
+    <div class="contenedor2">
+        <img src="/img/instagram.png">
+        <img src="/img/whatsapp.png">
     </div>
-</footer>
+    <div class="contenedor3">
+        <p>Antojitos Frit</p>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>Acerca de</li>
+            <li>Productos</li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
