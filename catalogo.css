@@ -21,12 +21,12 @@ header h1{
 }
 /* SECCION CONTENEDOR DE ITEMS */
 .contenedor .contenedor-items{
+    flex-grow: 1;
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap:30px;
     grid-row-gap: 30px;
-    width: 100%;
     transition: .3s;
 }
 .contenedor .contenedor-items .item{
@@ -110,18 +110,27 @@ header h1{
 /* seccion carrito */
 .carrito{
     border: 1px solid #F29F04;
-    width: 35%;
     margin-top: 30px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: auto;
     position: sticky !important;
     top: 0;
-    transition: .3s;
+    transition: all .3s ease-in;
     /* Estilos para ocultar */
-    margin-right: -100%;
-    opacity: 0;
+    width: 0;
+    opacity: 0; 
+    
+
 }
+.carrito.show {
+    /* margin-right: 0;
+    opacity: 1; */
+    width: 35%;
+    opacity: 1;
+    
+}
+
 .carrito .header-carrito{
     background-color:#F29F04;
     color: #fff;
