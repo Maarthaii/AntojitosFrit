@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antojitos Frit</title>
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="inicio_usuario.css">
+    <link rel="stylesheet" href="/assets/css/estilos.css">
+    <link rel="stylesheet" href="/assets/css/inicio_usuario.css">
 </head>
 <body>
     <!--Encabezado-->
@@ -20,33 +20,63 @@
             <ul class="nav__list">
                 <li><a href="/index.html">Inicio</a></li>
                 <li><a href="/catalogo.html">Catalogo</a></li>
-                <li><a href="/registro.html">Registrate</a></li>
                 <li> <a class="salir" href="/">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
-<!--Navegacion del usuario-->
-    <div class="nav_usuario">  
-<!--Buscador-->
-    <div class="buscador">
-        <form>
-            <input type="text" id="search-input" placeholder="Buscar..." name="Busqueda">
-            <button id="search-button" type="button"><img src="/img/lupa.png" alt="Buscar"></button>
-        </form>
+
+    <div> 
+        <br>
+        <span> Bienvenido @usuario  </span>
     </div>
+
+    <div class="usuario-contenedor">
+        <div class="usuario-pedidos-historial">
+            <h4>Historial de tus pedidos</h4><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.</p><hr>
+            <p>Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula. Phasellus vel mi non libero accumsan lacinia a ac nibh.</p><hr>
+            <p>Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula. </p>
+            <hr>
         </div>
-        <script src="script.js"></script>
-        <p>Mi carrito</p>
-        <p>Historial de pedidos</p>
-        <p>Pedidos actuales</p>
-    </div>
-    <!--Seccion del perfil del usuario-->
-    <div class="informacion_usuario">
-        <div class="pagina">
-            <span class="nombre_usuario">
-            <img src="/img/perfil/silueta1.png"></span>
-            <span class="bienvenido"><h6>Bienvenido @usuario</h6></span>
+
+    <div class="usuario-carrito">
+        <div class="header-carrito">
+            <h2>Tu Carrito</h2>
         </div>
+        <p>Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula. </p>
+        <button>Agregar mas</button>
+        <button > Comprar </button>
+        
     </div>
+
+    </div>
+
+    <div class="usuario-pedidos-estado">
+            <h4>Estado de tu pedido</h4> <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.</p>
+            <hr>
+    </div>
+    
+<!--Pie de pagina-->
+<footer >
+    <div class="contenedores">
+        <div class="contenedor1">
+            <img src="/assets/img/Logo.png">
+            <p>Deliciosos Deditos: ¡Una explosion de sabor en cada modisco!</p>
+        </div>
+    <div class="contenedor2">
+        <img src="/assets/img/instagram.png">
+        <img src="/assets/img/whatsapp.png">
+    </div>
+    <div class="contenedor3">
+        <p>Antojitos Frit</p>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>Acerca de</li>
+            <li>Productos</li>
+        </ul>
+    </div>
+</div>
+</footer>
 </body>
 </html>

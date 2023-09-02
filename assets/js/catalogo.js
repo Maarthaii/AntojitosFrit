@@ -1,5 +1,19 @@
-//Variable que mantiene el estado visible del carrito
-var carritoVisible = false;
+
+//Funcion que hace visible el carrito
+function hacerVisibleCarrito(){
+    document.getElementById('carrito').classList.add('show')
+
+}
+
+//Funciòn que controla si hay elementos en el carrito. Si no hay oculto el carrito.
+function ocultarCarrito(){
+    if(carritoItems.childElementCount==0){
+        document.getElementById('carrito').classList.remove('show')
+    }
+}
+
+
+
 
 //Cargar los documentos
 if(document.readyState == 'loading'){
@@ -7,17 +21,17 @@ if(document.readyState == 'loading'){
 }else{
     ready();
 }
-
+ 
 function ready(){
     
-    //Hacer funcional el boton de eliminar del carrito
+    //Hace funcional el boton de eliminar del carrito
     var botonesEliminarItem = document.getElementsByClassName('btn-eliminar');
     for(var i=0;i<botonesEliminarItem.length; i++){
         var button = botonesEliminarItem[i];
         button.addEventListener('click',eliminarItemCarrito);
     }
 
-    //Hacer funcional el boton de sumar cantidad
+    //Hace funcional el boton de sumar cantidad
     var botonesSumarCantidad = document.getElementsByClassName('sumar-cantidad');
     for(var i=0;i<botonesSumarCantidad.length; i++){
         var button = botonesSumarCantidad[i];
@@ -66,16 +80,6 @@ function agregarAlCarritoClicked(event){
     hacerVisibleCarrito();
 }
 
-//Funcion que hace visible el carrito
-function hacerVisibleCarrito(){
-    carritoVisible = true;
-    var carrito = document.getElementsByClassName('carrito')[0];
-    carrito.style.marginRight = '0';
-    carrito.style.opacity = '1';
-
-    var items =document.getElementsByClassName('contenedor-items')[0];
-    items.style.width = '60%';
-}
 
 //Funciòn que agrega un item al carrito
 function agregarItemAlCarrito(titulo, precio, imagenSrc){
@@ -159,19 +163,6 @@ function eliminarItemCarrito(event){
     // controlar si hay elementos en el carrito
     //Si no hay eliminar el carrito
     ocultarCarrito();
-}
-//Funciòn que controla si hay elementos en el carrito. Si no hay oculto el carrito.
-function ocultarCarrito(){
-    var carritoItems = document.getElementsByClassName('carrito-items')[0];
-    if(carritoItems.childElementCount==0){
-        var carrito = document.getElementsByClassName('carrito')[0];
-        carrito.style.marginRight = '-100%';
-        carrito.style.opacity = '0';
-        carritoVisible = false;
-    
-        var items =document.getElementsByClassName('contenedor-items')[0];
-        items.style.width = '100%';
-    }
 }
 //Actualizar el total de Carrito
 function actualizarTotalCarrito(){

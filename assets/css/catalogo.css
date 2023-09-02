@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
-*{
+*{ 
     margin: 0;
     padding:0;
-    font-family: 'Open Sans';
-}
+} 
 header h1{
     text-align: center;
     font-size: 35px;
@@ -21,6 +19,7 @@ header h1{
 }
 /* SECCION CONTENEDOR DE ITEMS */
 .contenedor .contenedor-items{
+    /* flex-grow:1;*/
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -34,7 +33,6 @@ header h1{
     margin: auto;
     border: 1px solid #D97803;
     border-radius: 10px;
-    /* padding: 20px;*/
     transition: .3s;
 }
 .contenedor .contenedor-items .item .img-item{
@@ -47,7 +45,7 @@ header h1{
     border-radius: 30px;
 }
 .contenedor .contenedor-items .item:hover{
-    box-shadow: 0 0 10px #F29F04;
+    box-shadow: 0 0 10px #7a7a7aa1;
     scale: 1.05;
 }
 .contenedor .contenedor-items .item .titulo-item{
@@ -110,17 +108,21 @@ header h1{
 /* seccion carrito */
 .carrito{
     border: 1px solid #F29F04;
-    width: 35%;
+    width:35%;
     margin-top: 30px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: auto;
     position: sticky !important;
     top: 0;
-    transition: .3s;
+    transition: all .3s ease-in;
     /* Estilos para ocultar */
-    margin-right: -100%;
+    width:0;
     opacity: 0;
+}
+.carrito.show{
+    width:35%;
+    opacity:1;
 }
 .carrito .header-carrito{
     background-color:#F29F04;
@@ -238,4 +240,4 @@ header h1{
     .carrito{
         width: 100%;
     }
-  }
+}
