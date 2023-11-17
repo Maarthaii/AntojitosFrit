@@ -24,10 +24,10 @@
 .registro form{
     display:flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     flex-direction:column;
 }
-.registro input[type="text"] {
+.registro input{
     flex:1;
     padding: 5px;
     border: 1px solid #ccc;
@@ -36,7 +36,7 @@
 }
 .registro button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #D97803;
     color: white;
     border: none;
     border-radius: 4px;
@@ -73,10 +73,10 @@
 .iniciar_sesion form{
     display:flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     flex-direction:column;
 }
-.iniciar_sesion input[type="text"] {
+.iniciar_sesion input {
     flex:1;
     padding: 5px;
     border: 1px solid #ccc;
@@ -85,7 +85,7 @@
 }
 .iniciar_sesion button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #D97803;
     color: white;
     border: none;
     border-radius: 4px;
@@ -150,7 +150,7 @@ p{
     background-color:#F29F04;
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 25px 0;
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
 }
@@ -162,14 +162,14 @@ p{
     padding: 20px;
 }
 .usuario-carrito button{
-    margin: 15px;
+    margin: 10px;
     border: none;
     background:  #D95203;
     color: #fff;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 20px;
+    padding: 15px;
     align-items: center;
     cursor: pointer;
     transition: .3s;

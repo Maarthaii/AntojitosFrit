@@ -13,7 +13,7 @@
 }
 
 /*Navegacion*/
-.header {
+.header_text, .header_img {
     position: sticky;
     left: 0;
     top: 0;
@@ -23,24 +23,35 @@
     box-shadow: 3px 3px 6px rgba(33, 33, 37, 0.616);
 }
 
-.nav {
+.nav, .nav_img {
     display: flex;
     padding: 20px 40px;
     align-items: center;
     justify-content: space-between;
 }
 
+.nav_img{
+    padding: 10px 20px;
+}
+
 /*Nombre Antojitos Frit*/
-.nav #titulo {
+.nav #titulo, #titulo_img {
     font-family: 'Alex Brush', cursive;
     font-size: 1.8rem;
     cursor: default;
 }
 
-.nav__list {
+.nav__list, .nav_img__list {
     display: flex;
     gap: 15px;
 }
+
+.nav_img__list img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
 
 /* Jombotron de fondo */
 .jumbotron {
@@ -53,6 +64,15 @@
     max-height: 85vh;
     object-fit: cover;
     opacity: 0.5;
+}
+
+.jumbotron__video_login {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
 }
 
 .jumbotron__logo {
@@ -135,6 +155,7 @@ footer {
     display:flex;
     justify-content: space-between;
     height: 250px ;
+    position: relative;
 }
 footer p {
     margin: 0;
@@ -179,7 +200,6 @@ footer img{
 }
 .contenedor2{
     flex-basis: 10%;
-    border-left: 2px solid #ccc;
     padding-left: 35px;
 }
 .contenedor2 img{
@@ -187,10 +207,9 @@ footer img{
 }
 .contenedor3{
     flex-basis: 30%;
-    border-left: 2px solid #ccc;
 }
 /* Evitar que los contenedores se encojan demasiado */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
     footer {
     flex-wrap: wrap;
     justify-content: center;
@@ -231,4 +250,53 @@ footer img{
 }
 ::-webkit-scrollbar-thumb:active {
     background-color: #F29F04;
+}
+
+@media only screen and (min-width:600px){
+   
+    .header_img{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:600px){
+    
+    .header_text{
+        display: none;
+    }
+
+    .jumbotron__logo  img {
+        object-fit: cover;
+        height: 100%;
+        max-height:200px;
+    }
+
+    .contenedores{
+        display: flex;
+        padding: 0;
+    }
+
+    footer{
+        height: auto;
+        width: 100vw;
+    }
+
+    .contenedor1 img{
+        width: 80px;
+    }
+
+    .contenedor1 p{
+        font-size: 20px;
+    }
+
+    .contenedor3, .contenedor2{
+        border: none;
+        width: 200px;
+        padding: 0;
+    }
+
+    .contenedor2 img{
+         width: 30px;
+    }
+
 }
