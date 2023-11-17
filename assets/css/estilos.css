@@ -146,6 +146,32 @@
     margin-top: 20px;
 }
 /*Pie de pagina*/
+
+
+#search-results {
+    padding: 20px;
+    padding-top: 0;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 20px;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+}
+
+.galeria .productos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.galeria .productos p {
+    margin-top: 20px;
+}
+
 footer {
     margin-top: 5px;
     background-color:rgb(121, 121, 121);
