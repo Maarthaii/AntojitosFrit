@@ -4,6 +4,8 @@ const express =require('express');
 const morgan =require('morgan');
 const path =require('path');
 const cors =require('cors');
+//Importar funcion para usar el motor de plantilla
+const {engine} =require('express-handlebars');
 
 //Configuracion del servidor y variables
 const server=express();
@@ -15,6 +17,30 @@ server.use('/', express.static(path.join(__dirname, './html')));
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use(cors());
+//Implantar motor de plantillas - 
+server.engine('handlebars', engine());
+server.set('view engine', 'handlebars');
+server.set('views', path.join(__dirname, './views'));
+
+server.get('/', (req, res) => {
+  res.render('home', { layout:false });
+})
+
+server.get('/registro', (req, res) => {
+  res.render('registro', { layout:false });
+})
+
+server.get('/catalogo', (req, res) => {
+  res.render('catalogo', { layout:false });
+})
+
+server.get('/iniciar_sesion', (req, res) => {
+  res.render('iniciar_sesion', { layout:false });
+})
+
+server.get('/vista_usuario', (req, res) => {
+  res.render('vista_usuario', { layout:false });
+})
 
 //Conexion con la base de datos
 const entity = mysql.createPool({
