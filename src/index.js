@@ -17,29 +17,34 @@ server.use('/', express.static(path.join(__dirname, './html')));
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use(cors());
+
 //Implantar motor de plantillas - 
 server.engine('handlebars', engine());
 server.set('view engine', 'handlebars');
 server.set('views', path.join(__dirname, './views'));
 
+//Ruta estatica para los estilos
+server.use(express.static(path.join(__dirname, './public')))
+
+//Rutas de los handlebars
 server.get('/', (req, res) => {
-  res.render('home', { layout:false });
+  res.render('home')
 })
 
 server.get('/registro', (req, res) => {
-  res.render('registro', { layout:false });
+  res.render('registro');
 })
 
 server.get('/catalogo', (req, res) => {
-  res.render('catalogo', { layout:false });
+  res.render('catalogo');
 })
 
 server.get('/iniciar_sesion', (req, res) => {
-  res.render('iniciar_sesion', { layout:false });
+  res.render('iniciar_sesion');
 })
 
 server.get('/vista_usuario', (req, res) => {
-  res.render('vista_usuario', { layout:false });
+  res.render('vista_usuario');
 })
 
 //Conexion con la base de datos
@@ -68,7 +73,7 @@ const entity = mysql.createPool({
 
            
               console.log('El usuario ha sido registrado de manera existosa:', result);
-             // res.json({ mensaje: 'Usuario registrado exitosamente', resultado: result });
+              res.json({ mensaje: 'Usuario registrado exitosamente', resultado: result });
           }
       }
       )

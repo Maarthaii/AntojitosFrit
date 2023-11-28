@@ -1,0 +1,66 @@
+
+/*ESPACIO DE PERFIL DEL USUARIO*/
+.usuario-contenedor{
+    flex: 1;
+    display: flex;
+    justify-content:center;
+    width:100%;    
+    gap:10px;
+    padding: 10px;
+}
+span{
+    margin:10px;
+    font-size: 30px;
+}
+.usuario-pedidos-historial{
+    padding: 5px;
+    flex-basis: 65%;
+}
+
+.usuario-pedidos-historial hr{
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+p{
+    font-size: 17px;
+}
+.usuario-pedidos-estado{
+    margin: 10px;
+    padding: 5px;
+    display: block;
+    flex-wrap: wrap;
+}
+
+.usuario-carrito{
+    flex-basis: 40%;
+
+}
+.header-carrito{
+    background-color:#F29F04;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+}
+.usuario-carrito p{
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 20px;
+}
+.usuario-carrito button{
+    margin: 10px;
+    border: none;
+    background:  #D95203;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
