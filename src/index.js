@@ -28,23 +28,46 @@ server.use(express.static(path.join(__dirname, './public')))
 
 //Rutas de los handlebars
 server.get('/', (req, res) => {
-  res.render('home')
+  res.render('home', {
+    title: 'Antojitos Frit',
+    styles:[
+      'estilos',
+      'catalogo'
+    ]
+})
 })
 
 server.get('/registro', (req, res) => {
-  res.render('registro');
+  res.render('registro',{
+    styles: [
+    'estilos',
+    'inicio_usuario']
+  });
 })
 
 server.get('/catalogo', (req, res) => {
-  res.render('catalogo');
+  res.render('catalogo',{
+    styles:[
+      'estilos',
+      'catalogo'
+    ]
+  });
 })
 
 server.get('/iniciar_sesion', (req, res) => {
-  res.render('iniciar_sesion');
+  res.render('iniciar_sesion' ,{
+    styles: [
+    'estilos',
+    'inicio_usuario']
+  });
 })
 
 server.get('/vista_usuario', (req, res) => {
-  res.render('vista_usuario');
+  res.render('vista_usuario',{
+    styles: [
+    'estilos',
+    'usuario']
+  });
 })
 
 //Conexion con la base de datos
@@ -70,8 +93,6 @@ const entity = mysql.createPool({
               console.error('Error al ejecutar la consulta SQL:', err);
               res.status(500).send('Error al insertar en la base de datos');
           } else {
-
-           
               console.log('El usuario ha sido registrado de manera existosa:', result);
               res.json({ mensaje: 'Usuario registrado exitosamente', resultado: result });
           }
