@@ -1,0 +1,67 @@
+doctype html
+// 10/08/2023
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  |         {{#each styles}}
+  link(rel='stylesheet' href='/assets/css/{{this}}.css')
+  |     {{/each}}
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  |     {{!-- 
+  link(rel='stylesheet' href='/assets/css/estilos.css')
+  link(rel='stylesheet' href='/assets/css/catalogo.css')
+  link(rel='stylesheet' href='/assets/css/usuario.css')
+  |  --}}
+  script(src='/assets/js/catalogo.js' async='')
+  title Antojitos Frit
+// Encabezado
+header.header_text
+  nav.nav
+    span#titulo
+      | {{title}}
+    // Navegadores
+    ul.nav__list
+      li
+        a(href='./') Inicio
+      li
+        a(href='./catalogo') Catalogo
+      li
+        a(href='./registro') Registrate
+      li
+        a(href='./iniciar_sesion') Iniciar sesion
+// Encabezado responsive
+header.header_img
+  nav.nav_img
+    span#titulo_img
+      | Antojitos Frit
+    ul.nav_img__list
+      li
+        a(href='./')
+          img(src='../assets/img/home.png')
+      li
+        a(href='./catalogo')
+          img(src='../assets/img/carrito.png')
+      li
+        a(href='./registro')
+          img(src='../assets/img/agregar.png')
+      li
+        a(href='./iniciar_sesion')
+          img(src='../assets/img/usuario.png')
+| {{{body}}}
+// Pie de pagina
+footer
+  .contenedores
+    .contenedor1
+      img(src='/assets/img/Logo.png')
+      p Deliciosos Deditos: &iexcl;Una explosion de sabor en cada modisco!
+    .contenedor2
+      img(src='/assets/img/instagram.png')
+      img(src='/assets/img/whatsapp.png')
+    .contenedor3
+      p Antojitos Frit
+      ul
+        li
+          a(href='./') Inicio
+        li Acerca de
+        li Productos

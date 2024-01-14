@@ -1,12 +1,13 @@
 //Importaciones
 const mysql = require('mysql');
 const express =require('express'); 
-const morgan =require('morgan');
+// const morgan =require('morgan');
 const path =require('path');
-const cors =require('cors');
+// const cors =require('cors');
 //Importar funcion para usar el motor de plantilla
 const pug = require('pug'); 
 const dotenv = require('dotenv');
+const router = require('./routes/routes');
 
 dotenv.config();
 
@@ -15,12 +16,12 @@ const server=express();
 const port=3000;
 
 //Configuracion de Middleware
-server.use(morgan('dev'));
+// server.use(morgan('dev'));
 //Ruta estatica
-server.use('/', express.static(path.join(__dirname, './html')));
+// server.use('/', express.static(path.join(__dirname, './html')));
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
-server.use(cors());
+// server.use(cors());
 
 //Implantar motor de plantillas - 
 // server.engine('handlebars', engine());
@@ -30,50 +31,53 @@ server.set('views', path.join(__dirname, './views'));
 
 //Ruta estatica para los estilos
 server.use(express.static(path.join(__dirname, './public')))
+server.set('view engine', 'pug');
+
+server.use('/', router);
 
 //Rutas de los handlebars
-server.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Antojitos Frit',
-    styles:[
-      'estilos',
-      'catalogo'
-    ]
-})
-})
+// server.get('/', (req, res) => {
+//   res.render('home', {
+//     title: 'Antojitos Frit',
+//     styles:[
+//       'estilos',
+//       'catalogo'
+//     ]
+// })
+// })
 
-server.get('/registro', (req, res) => {
-  res.render('registro',{
-    styles: [
-    'estilos',
-    'inicio_usuario']
-  });
-})
+// server.get('/registro', (req, res) => {
+//   res.render('registro',{
+//     styles: [
+//     'estilos',
+//     'inicio_usuario']
+//   });
+// })
 
-server.get('/catalogo', (req, res) => {
-  res.render('catalogo',{
-    styles:[
-      'estilos',
-      'catalogo'
-    ]
-  });
-})
+// server.get('/catalogo', (req, res) => {
+//   res.render('catalogo',{
+//     styles:[
+//       'estilos',
+//       'catalogo'
+//     ]
+//   });
+// })
 
-server.get('/iniciar_sesion', (req, res) => {
-  res.render('iniciar_sesion' ,{
-    styles: [
-    'estilos',
-    'inicio_usuario']
-  });
-})
+// server.get('/iniciar_sesion', (req, res) => {
+//   res.render('iniciar_sesion' ,{
+//     styles: [
+//     'estilos',
+//     'inicio_usuario']
+//   });
+// })
 
-server.get('/vista_usuario', (req, res) => {
-  res.render('vista_usuario',{
-    styles: [
-    'estilos',
-    'usuario']
-  });
-})
+// server.get('/vista_usuario', (req, res) => {
+//   res.render('vista_usuario',{
+//     styles: [
+//     'estilos',
+//     'usuario']
+//   });
+// })
 
 //Conexion con la base de datos
 const entity = mysql.createPool({
@@ -110,3 +114,4 @@ const entity = mysql.createPool({
     console.log(`\n Server is running on port ${port}`)
     console.log(`click here: http://localhost:${port}\n`)
 })
+
