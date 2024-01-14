@@ -1,51 +1,56 @@
-// 10/08/2023
-// -Video y diseño de encabezado
-.jumbotron
-  video.jumbotron__video(playsinline='' autoplay='' muted='' loop='')
-    source(src='/assets/video/pizza.mp4' type='video/mp4')
-  .jumbotron__logo
-    img(src='/assets/img/Logo.png' alt='')
-// Buscador
-.buscador
-  form
-    input#search-input(type='text' placeholder='Buscar...' name='Busqueda')
-    button#search-button(type='button')
-      img(src='/assets/img/lupa.png' alt='Buscar')
-#search-results
-script(src='/assets/js/script.js')
-// -Galeria de productos-
-section.contenedor
-  // Contenedor de elementos
-  .contenedor-items
-    .item
-      img.img-item(src='/assets/img/tequeño.jpg' alt='')
-      span.titulo-item Teque&ntilde;os 1
-      span.precio-item $15.000
-      span.descripcion-item
-        p Descripcion
-      span.ver-item
-        a(href='catalogo') Ver mas
-    .item
-      img.img-item(src='/assets/img/tequeño.jpg' alt='')
-      span.titulo-item Teque&ntilde;os 2
-      span.precio-item $15.000
-      span.descripcion-item
-        p Descripcion
-      span.ver-item
-        a(href='catalogo') Ver mas
-    .item
-      img.img-item(src='/assets/img/tequeño.jpg' alt='')
-      span.titulo-item Teque&ntilde;os 3
-      span.precio-item $15.000
-      span.descripcion-item
-        p Descripcion
-      span.ver-item
-        a(href='catalogo') Ver mas
-    .item
-      img.img-item(src='/assets/img/tequeño.jpg' alt='')
-      span.titulo-item Teque&ntilde;os 4
-      span.precio-item $15.000
-      span.descripcion-item
-        p Descripcion
-      span.ver-item
-        a(href='catalogo') Ver mas
+extends layouts/main.pug
+
+block content
+
+  // 10/08/2023
+  // -Video y diseño de encabezado
+
+  .jumbotron
+    video.jumbotron__video(playsinline='' autoplay='' muted='' loop='')
+      source(src='/assets/video/pizza.mp4' type='video/mp4')
+    .jumbotron__logo
+      img(src='/assets/img/Logo.png' alt='')
+  // Buscador
+  .buscador
+    form
+      input#search-input(type='text' placeholder='Buscar...' name='Busqueda')
+      button#search-button(type='button')
+        img(src='/assets/img/lupa.png' alt='Buscar')
+  #search-results
+  script(src='/assets/js/script.js')
+  // -Galeria de productos-
+  section.contenedor
+    // Contenedor de elementos
+    .contenedor-items
+      .item
+        img.img-item(src='/assets/img/tequeño.jpg' alt='')
+        span.titulo-item Teque&ntilde;os 1
+        span.precio-item $15.000
+        span.descripcion-item
+          p Descripcion
+        span.ver-item
+          a(href='catalogo') Ver mas
+      .item
+        img.img-item(src='/assets/img/tequeño.jpg' alt='')
+        span.titulo-item Teque&ntilde;os 2
+        span.precio-item $15.000
+        span.descripcion-item
+          p Descripcion
+        span.ver-item
+          a(href='catalogo') Ver mas
+      .item
+        img.img-item(src='/assets/img/tequeño.jpg' alt='')
+        span.titulo-item Teque&ntilde;os 3
+        span.precio-item $15.000
+        span.descripcion-item
+          p Descripcion
+        span.ver-item
+          a(href='catalogo') Ver mas
+      .item
+        img.img-item(src='/assets/img/tequeño.jpg' alt='')
+        span.titulo-item Teque&ntilde;os 4
+        span.precio-item $15.000
+        span.descripcion-item
+          p Descripcion
+        span.ver-item
+          a(href='catalogo') Ver mas
