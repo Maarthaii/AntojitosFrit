@@ -5,7 +5,10 @@ const morgan =require('morgan');
 const path =require('path');
 const cors =require('cors');
 //Importar funcion para usar el motor de plantilla
-const {engine} =require('express-handlebars');
+const pug = require('pug'); 
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 //Configuracion del servidor y variables
 const server=express();
@@ -13,14 +16,16 @@ const port=3000;
 
 //Configuracion de Middleware
 server.use(morgan('dev'));
+//Ruta estatica
 server.use('/', express.static(path.join(__dirname, './html')));
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 server.use(cors());
 
 //Implantar motor de plantillas - 
-server.engine('handlebars', engine());
-server.set('view engine', 'handlebars');
+// server.engine('handlebars', engine());
+// server.set('view engine', 'handlebars');
+//localizacion de la plantilla
 server.set('views', path.join(__dirname, './views'));
 
 //Ruta estatica para los estilos

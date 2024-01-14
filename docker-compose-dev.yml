@@ -1,0 +1,36 @@
+version: '1.0.0'
+
+services:
+  app:
+    container_name: backend_antojitos
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    # env_file: 
+    #   path: ./.env.development
+    ports:
+      - ${PORT}:${PORT}
+      # - 3000:3000
+    volumes:
+      - ./:/home/app
+    links:
+      - mongodb
+  
+  mongodb:
+    container_name: antojitos_db
+    image: mongo:4
+    attach: false
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/db
+    # env_file: 
+    #   path: ./.env.development
+    environment:
+        - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+        # - MONGO_INITDB_ROOT_USERNAME=root        
+        # - MONGO_INITDB_ROOT_PASSWORD=password
+
+volumes:
+  mongo:
