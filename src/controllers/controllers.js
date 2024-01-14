@@ -10,4 +10,14 @@ module.exports=class Controllers{
             ]
         });
     }
+
+    renderCatalogo(req, res){
+        res.render('catalogo',{
+            styles:[
+                'estilos',
+                'catalogo'
+            ]
+        });
+    }
+
 }

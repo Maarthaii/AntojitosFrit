@@ -9,56 +9,56 @@ const itemsList = [
         titulo: 'Tequeño 1',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc:"/img/tequeño.jpg"
+        imagenSrc:"/assets/img/tequeño.jpg"
 
     },{
         id: 2,
         titulo: 'Tequeño 2',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc: "/assets/img/tequeño.jpg"
 
     },{
         id: 3,
         titulo: 'Tequeño 3',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc: "/assets/img/tequeño.jpg"
 
     },{
         id: 4,
         titulo: 'Tequeño 4',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc: "/assets/img/tequeño.jpg"
 
     },{
         id: 5,
         titulo: 'Tequeño 5',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc: "/assets/img/tequeño.jpg"
 
     },{
         id: 6,
         titulo: 'Tequeño 6',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc: "/assets/img/tequeño.jpg"
 
     },{
         id: 7,
         titulo: 'Tequeño 7',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc:"/img/tequeño.jpg"
+        imagenSrc:"/assets/img/tequeño.jpg"
 
     },{
         id: 8,
         titulo: 'Tequeño 8',
         precio: 15000,
         descripcion: 'Descripción',
-        imagenSrc: "/img/tequeño.jpg"
+        imagenSrc:"/assets/img/tequeño.jpg"
 
     },{
         id: 9,

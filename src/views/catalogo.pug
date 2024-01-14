@@ -1,0 +1,31 @@
+extends layouts/main.pug 
+
+block content
+
+    //Buscador
+    .buscador
+        form
+            input#search-input(type='text' placeholder='Buscar...' name='Búsqueda')
+            button#search-button
+                img(src='/assets/img/lupa.png' alt='Buscar')
+        
+    #search-results
+    script(src='/assets/js/script.js')
+    
+    section.contenedor
+        //Contenedor de elementos
+        #contenedor-items.contenedor-items 
+        //Carrito de Compras
+        #carrito.carrito
+            .header-carrito
+                h2 Tu carrito
+            //Visualizacion del contenido del carrito de compras
+            #carrito-items.carrito-items 
+
+            .carrito-total
+                .fila
+                    strong Total
+                    .carrito-precio-total $120.000,00
+                button.btn-pagar
+                    | Comprar 
+                    i.fa-solid.fa-bag-shopping
