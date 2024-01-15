@@ -1,0 +1,21 @@
+extends layouts/main.pug 
+
+block content
+    // Video y diseño de encabezado
+    .jumbotron
+        video.jumbotron__video_login(playsinline='' autoplay='' muted='' loop='')
+            source(src='/assets/video/pizza.mp4' type='video/mp4')
+
+    // Seccion de registro de usuario
+    .iniciar_sesion 
+        img(src='/assets/img/usuario.png')
+        h2 Iniciar Sesion
+        p 
+            | ¡Bienvenido de nuevo! Ingresa a tu cuenta para disfrutar de una experiencia de compra única en 
+            em Antojitos Frit. 
+            | Si aún no tienes una cuenta, puedes registrarte fácilmente.
+            p
+        form
+            input(type="text" placeholder="Correo electronico" name="iniciar_correo")
+            input(type="text" placeholder="Contraseña" name="iniciar_contraseña")
+            button(type='submit') Iniciar sesion

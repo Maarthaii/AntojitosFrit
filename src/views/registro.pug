@@ -1,0 +1,24 @@
+extends layouts/main.pug 
+
+block content
+
+    //Video y diseño de encabezado
+    .jumbotron
+        video.jumbotron__video_login (playsinline='' autoplay='' muted='' loop='') 
+            source(src='/assets/video/pizza.mp4' type='video/mp4')
+
+    //Seccion de registro
+    .registro
+        img(src='/assets/img/agregar.png')
+        h2 Registrate
+        p
+            | Crea tu cuenta en 
+            em Antojitos Frit
+            | al registrarte, podras gestionar tus pedidos y recibir notificaiones.
+            p -
+        form(action='http://localhost:3000/cliente' method='post' required='')
+            input(type='text' placeholder='Nombre' name='nombreCliente' required='')
+            input(type='text' placeholder='Telefono' name='telefonoCliente' required='')
+            input(type='text' placeholder='Correo electronico' name='correoCliente' required='')
+            input(type='password' placeholder='Contraseña' name='contraseñaCliente' required='')
+            button#button(type='submit')  Registrarse 

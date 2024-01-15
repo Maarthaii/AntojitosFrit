@@ -88,7 +88,7 @@ function cargarCatalogo () {
 
         container.innerHTML += `
         <div class="item">
-            <img src="/img/tequeño.jpg" alt="" class="img-item">
+            <img src="${item.imagenSrc}" alt="" class="img-item">
             <span class="titulo-item">${item.titulo}</span>
             <span class="precio-item">$${item.precio}</span>
             <span class="descripcion-item"><p>${item.descripcion}</p></span>

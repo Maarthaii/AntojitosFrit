@@ -20,4 +20,31 @@ module.exports=class Controllers{
         });
     }
 
+    renderIniciarSesion(req, res){
+        res.render('iniciar_sesion', {
+            styles: [
+                'estilos',
+                'inicio_usuario'
+            ]
+        });
+    }
+
+    renderRegistro(req, res){
+        res.render('registro',{
+            styles: [
+                'estilos',
+                'inicio_usuario'
+            ]
+        });
+    }
+
+    renderVistaUsuario(req, res){
+        res.render('vista_usuario',{
+            styles: [
+                'estilos',
+                'usuario'
+            ]
+        });
+    }
+
 }
