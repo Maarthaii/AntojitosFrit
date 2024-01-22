@@ -26,11 +26,11 @@ server.use(express.urlencoded({extended: false}));
 //Implantar motor de plantillas - 
 // server.engine('handlebars', engine());
 // server.set('view engine', 'handlebars');
-//localizacion de la plantilla
-server.set('views', path.join(__dirname, './views'));
-
 //Ruta estatica para los estilos
 server.use(express.static(path.join(__dirname, './public')))
+
+//localizacion de la plantilla
+server.set('views', path.join(__dirname, './views'));
 server.set('view engine', 'pug');
 
 server.use('/', router);

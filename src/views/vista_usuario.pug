@@ -1,15 +1,15 @@
 extends layouts/main.pug 
 
 block content
-    // 21/08/2023
+
     div
         br
-            span  Bienvenido @usuario  
-    
+        span  Bienvenido @usuario  
+
     .usuario-contenedor
         .usuario-pedidos-historial
             h4 Historial de tus pedidos
-            p -
+            br
             p
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.
             hr
@@ -19,18 +19,19 @@ block content
             p
             | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
             hr
-    
-    .usuario-carrito
-        .header-carrito
-            h2 Tu Carrito
-        p
-        | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
-        button Agregar mas
-        button  Comprar 
-    
+
+        .usuario-carrito
+            .header-carrito
+                h2 Tu Carrito
+                p
+                | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
+            
+            button Agregar mas
+            button  Comprar 
+
     .usuario-pedidos-estado
-        h4 Estado de tu pedido
-        br
-        p
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.
-        hr
+    h4 Estado de tu pedido
+    br
+    p
+        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.
+    hr
