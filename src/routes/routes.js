@@ -10,5 +10,5 @@ router.get('/catalogo', controller.renderCatalogo);
 router.get('/iniciar_sesion', controller.renderIniciarSesion);
 router.get('/registro', controller.renderRegistro);
 router.get('/vista_usuario', controller.renderVistaUsuario);
-
+router.post('/registro/users', controller.addUser);
 module.exports = router;

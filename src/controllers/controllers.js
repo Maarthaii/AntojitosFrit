@@ -1,4 +1,4 @@
-
+const {createUser} = require('../models/user');
 module.exports=class Controllers{
 
     renderHome(req, res){
@@ -46,5 +46,24 @@ module.exports=class Controllers{
             ]
         });
     }
+
+async addUser(req, res) {
+    const newUser = {
+        nombre: req.body.nombre,
+        telefono: req.body.telefono,
+        correo: req.body.correo,
+        contraseña: req.body.contraseña
+    };
+
+    try {
+        await createUser(newUser);
+        console.log('Usuario registrado con éxito');
+        res.redirect('/registro');
+
+    } catch (err) {
+        console.error('Error al registrar usuario:', err.message);
+        res.status(500).send('Error al registrar usuario: ' + err.message);
+    }
+}
 
 }
