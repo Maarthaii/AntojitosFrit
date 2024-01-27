@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const server = require('./config/server');
+require('./database/db')
 
 dotenv.config();
 

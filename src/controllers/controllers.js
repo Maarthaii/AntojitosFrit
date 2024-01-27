@@ -1,4 +1,4 @@
-const {createUser} = require('../models/user');
+const {createUser, findUser} = require('../models/user');
 module.exports=class Controllers{
 
     renderHome(req, res){
@@ -66,4 +66,26 @@ async addUser(req, res) {
     }
 }
 
+loginUser(req, res){
+    const user = {
+        nombre: req.body.nombre,
+        contraseña: req.body.contraseña
+    }
+
+    findUser(user)
+    .then((foundUser) => {
+        if (foundUser) {
+            console.log('Has iniciado sesion con exito');
+            res.redirect('/vista_usuario')
+        }else {
+            console.log('Los datos ingresados son incorrectos');
+            res.status(401).send('Credenciales Incorrectas');
+        }
+    })
+    .catch((err) => {
+        console.log('Error al iniciar sesion', err);
+        res.status(500).send('Error: ' + err.message);
+    });
+
+}
 }

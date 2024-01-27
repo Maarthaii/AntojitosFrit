@@ -15,7 +15,7 @@ block content
             em Antojitos Frit. 
             | Si aún no tienes una cuenta, puedes registrarte fácilmente.
             p
-        form
-            input(type="text" placeholder="Correo electronico" name="iniciar_correo")
-            input(type="text" placeholder="Contraseña" name="iniciar_contraseña")
-            button(type='submit') Iniciar sesion
+        form(action='/iniciar_sesion/users' method='post')
+            input(type="text" placeholder="Nombre" name="nombre")
+            input(type="text" placeholder="Contraseña" name="contraseña")
+            button(type='submit') Iniciar sesion 
