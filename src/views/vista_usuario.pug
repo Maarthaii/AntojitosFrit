@@ -4,12 +4,13 @@ block content
 
     div
         br
-        span  Bienvenido @usuario  
+        span  Bienvenido #{user.nombre}  
 
     .usuario-contenedor
         .usuario-pedidos-historial
             h4 Historial de tus pedidos
             br
+            p #{user.telefono} --- #{user.correo} --- #{user.contraseña}
             p
             | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.
             hr

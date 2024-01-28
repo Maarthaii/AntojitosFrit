@@ -69,6 +69,8 @@ async addUser(req, res) {
 loginUser(req, res){
     const user = {
         nombre: req.body.nombre,
+        telefono: req.body.telefono,
+        correo: req.body.correo,
         contraseña: req.body.contraseña
     }
 
@@ -76,7 +78,13 @@ loginUser(req, res){
     .then((foundUser) => {
         if (foundUser) {
             console.log('Has iniciado sesion con exito');
-            res.redirect('/vista_usuario')
+            res.render('vista_usuario', { 
+                user: foundUser,
+                styles: [
+                    'estilos',
+                    'usuario'
+                ] 
+            })
         }else {
             console.log('Los datos ingresados son incorrectos');
             res.status(401).send('Credenciales Incorrectas');
