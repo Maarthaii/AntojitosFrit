@@ -1,4 +1,5 @@
 const {createUser, findUser} = require('../models/user');
+
 module.exports=class Controllers{
 
     renderHome(req, res){
@@ -15,7 +16,8 @@ module.exports=class Controllers{
         res.render('catalogo',{
             styles:[
                 'estilos',
-                'catalogo'
+                'catalogo',
+                'carrito'
             ]
         });
     }
