@@ -14,7 +14,7 @@ router.get('/registro', controller.renderRegistro);
 router.get('/vista_usuario', controller.renderVistaUsuario);
 router.post('/registro', controller.addUser);
 router.post('/iniciar_sesion', controller.loginUser);
-router.post('/catalogo', carritoController.addCarts)
+router.post('/carritoController', carritoController.addCarts)
 
 // router.post('/cerrar', (req, res) => {
 //     // Eliminar el identificador de usuario de la sesión

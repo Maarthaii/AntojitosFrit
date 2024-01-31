@@ -165,6 +165,7 @@ function pagarClicked(){
     carrito = []
     actualizarTotalCarrito();
     ocultarCarrito();
+    enviarCarritoAlServidor();
 }
 
 //Funciòn que controla el boton clickeado de agregar al carrito
@@ -237,21 +238,24 @@ function actualizarTotalCarrito(){
 
 // 'carrito' contiene la información del carrito a enviar al servidor
 function enviarCarritoAlServidor() {
-    fetch('/catalogo', {
+    fetch('/carritoController', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ carrito }),
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log('Respuesta del servidor:', response);
+        return response.json();
+    })
+    // .then(response => response.json())
     .then(data => {
         console.log('Carrito enviado exitosamente al servidor:', data);
         // 
         if (data.mensaje) {
             alert(data.mensaje);
         }
-    
     })
     .catch(error => {
         console.error('Error al enviar el carrito al servidor:', error);

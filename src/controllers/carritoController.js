@@ -5,37 +5,40 @@ module.exports=class CarritoController{
     
     async addCarts(req, res){
 
-    
+    try{
 
-        const carrito = req.body;
+        const carrito = req.body.carrito;
         const total = req.body.total;
 
+        const productos = carrito.map(item => {
+            return {
+                producto: item.titulo,
+                cantidad: item.cantidad, 
+                precio: item.precio
+            };
+        });
+
         const newCart = {
-            productos: carrito,
+            productos: productos,
             total: total
         }
 
-        createUserCart(newCart)
-        .then((savedCart)=>{
-            if(savedCart){
-                console.log('Se ha guardado la informacion del carrito de compras');
-            res.render('catalogo',{
-                styles: [
-                    'estilos',
-                    'usuario'
-                ]
-            })
-            }
-        })
+        const savedCart = await createUserCart(newCart);
 
-        // console.log('Nuevo carrito:', newCart);
-        // res.status(201).json({ mensaje: 'Carrito creado correctamente', carrito: savedCart });
-    }catch (error) {
+        if (savedCart) {
+            console.log('Se ha guardado la información del carrito de compras', savedCart);
+            return res.json({ mensaje: 'Carrito creado correctamente', carrito: savedCart });
+            }
+            res.status(500).json({ error: 'Error al guardar el carrito en el servidor' });
+        
+
+
+        }catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Error al procesar el carrito en el servidor' });
     }
 }
-
+}
 
 
 
