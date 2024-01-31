@@ -1,8 +1,15 @@
 const express = require('express');
 const path = require('path');
 const router = require('../routes/routes');
+// const session = require('express-session');
 
 const server = express();
+
+// server.use(session({
+//     secret: 'mi_secreto',
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended:false}));

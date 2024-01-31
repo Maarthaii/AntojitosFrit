@@ -234,3 +234,75 @@ function actualizarTotalCarrito(){
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ",00";
     
 }
+
+// 'carrito' contiene la información del carrito a enviar al servidor
+function enviarCarritoAlServidor() {
+    fetch('/catalogo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ carrito }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Carrito enviado exitosamente al servidor:', data);
+        // 
+        if (data.mensaje) {
+            alert(data.mensaje);
+        }
+    
+    })
+    .catch(error => {
+        console.error('Error al enviar el carrito al servidor:', error);
+        alert('Error al procesar el carrito en el servidor');
+    });
+}
+
+
+document.getElementById('btn-pagar').addEventListener('click', () => {
+
+    enviarCarritoAlServidor();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function enviarCarritoAlServidor() {
+//     fetch('/catalogo', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ carrito }),
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Carrito enviado exitosamente al servidor:', data);
+//         // Puedes realizar acciones adicionales si es necesario
+//         if (data.mensaje) {
+//             alert(data.mensaje);
+//         }
+    
+//     })
+//     .catch(error => {
+//         console.error('Error al enviar el carrito al servidor:', error);
+//         alert('Error al procesar el carrito en el servidor');
+//     });
+// }
+
+// //  botón con el id 'btn-pagar'
+// document.getElementById('btn-pagar').addEventListener('click', () => {
+//     // Realizar acciones adicionales si es necesario
+//     enviarCarritoAlServidor();
+// });
+

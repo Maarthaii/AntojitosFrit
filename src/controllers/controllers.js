@@ -60,7 +60,7 @@ async addUser(req, res) {
     try {
         await createUser(newUser);
         console.log('Usuario registrado con éxito');
-        res.redirect('/registro');
+        res.redirect('registro');
 
     } catch (err) {
         console.error('Error al registrar usuario:', err.message);
@@ -79,6 +79,10 @@ loginUser(req, res){
     findUser(user)
     .then((foundUser) => {
         if (foundUser) {
+
+            // if (req.session) {
+            //     req.session.userId = foundUser._id;
+
             console.log('Has iniciado sesion con exito');
             res.render('vista_usuario', { 
                 user: foundUser,
@@ -87,6 +91,7 @@ loginUser(req, res){
                     'usuario'
                 ] 
             })
+        // }
         }else {
             console.log('Los datos ingresados son incorrectos');
             res.status(401).send('Credenciales Incorrectas');
