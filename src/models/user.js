@@ -1,17 +1,16 @@
-const schema = require('./schema/users');
+const schema = require('./schema/users')
 
-//Registrar un usuario
-const createUser = async (users)=>{
-    return await schema.create(users)
+// Registrar un usuario
+const createUser = async (users) => {
+  return await schema.create(users)
 }
 
-//Encontrar un usuario
-const findUser = async (user)=>{
-    return await schema.findOne({nombre: user.nombre, contraseña: user.contraseña});
+// Encontrar un usuario
+const findUser = async (user) => {
+  return await schema.findOne({ nombre: user.nombre, contraseña: user.contraseña })
 }
 
-module.exports={
-    createUser,
-    findUser
+module.exports = {
+  createUser,
+  findUser
 }
-

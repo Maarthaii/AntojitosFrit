@@ -1,63 +1,27 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const createCart = new mongoose.Schema({
-    producto: {
-        type: String,
-        // required: true
+const cart = new mongoose.Schema({
+  products: [{
+    price: {
+      type: 'number',
+      default: 0
     },
-    cantidad: {
-        type: Number,
-        // required: true,
-        default: 1
+    name: {
+      type: 'string'
     },
-    precio: {
-        type: Number,
-        // required: true
+    _id: {
+      type: 'number'
     }
-});
-
-const userCarts = new mongoose.Schema({
-    productos: [createCart],
-    total: {
-        type: Number,
-        // required: true,
-        validate: {
-            validator: (value) => !isNaN(value),
-            message: 'Total no es un valor numerico'
-        }
-    }
+  }],
+  count: {
+    type: 'number',
+    default: 1
+  }
 })
 
-const ShoppingCart = mongoose.models.shoppingCart ?? mongoose.model('shoppingCart', createCart);
-module.exports= ShoppingCart;
+const model = mongoose.models.cart ?? mongoose.model('cart', cart)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = model
 
 // // src/models/schema/shoppingCarts
 // const mongoose = require('mongoose');

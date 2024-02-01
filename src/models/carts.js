@@ -1,15 +1,12 @@
-const schema = require('./schema/shoppingCart');
+const schema = require('./schema/carts')
 
-const createUserCart = async (userCarts)=>{
-    return await schema.create(userCarts)
+const setCart = async (products) => {
+  return await schema.create(products)
 }
 
-module.exports={
-    createUserCart
+module.exports = {
+  setCart
 }
-
-
-
 
 // const mongoose = require('mongoose');
 // const shoppingCartSchema = require('./schema/shoppingCarts');
@@ -17,4 +14,3 @@ module.exports={
 // const ShoppingCart = mongoose.model('ShoppingCart', shoppingCartSchema);
 
 // module.exports = ShoppingCart;
-

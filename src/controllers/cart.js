@@ -1,95 +1,28 @@
-const {createUserCart} = require('../models/shoppingCart');
+const { setCart } = require('../models/carts')
 // const {enviarCarritoAlServidor} = require('../public/assets/js/catalogo');
 
-module.exports=class CarritoController{
-    
-    async addCarts(req, res){
+module.exports = class Controller {
+  async addCarts (req, res) {
+    try {
+      const products = req.body.products
+      const count = req.body.count
 
-    try{
+      const savedCart = await setCart({
+        products,
+        count
+      })
 
-        const carrito = req.body.carrito;
-        const total = req.body.total;
-
-        const productos = carrito.map(item => {
-            return {
-                producto: item.titulo,
-                cantidad: item.cantidad, 
-                precio: item.precio
-            };
-        });
-
-        const newCart = {
-            productos: productos,
-            total: total
-        }
-
-        const savedCart = await createUserCart(newCart);
-
-        if (savedCart) {
-            console.log('Se ha guardado la información del carrito de compras', savedCart);
-            return res.json({ mensaje: 'Carrito creado correctamente', carrito: savedCart });
-            }
-            res.status(500).json({ error: 'Error al guardar el carrito en el servidor' });
-        
-
-
-        }catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Error al procesar el carrito en el servidor' });
+      if (savedCart) {
+        console.log('Se ha guardado la información del carrito de compras', savedCart)
+        return res.json({ mensaje: 'Carrito creado correctamente', carrito: savedCart })
+      }
+      res.status(500).json({ error: 'Error al guardar el carrito en el servidor' })
+    } catch (error) {
+      console.error(error)
+      res.status(500).json({ error: 'Error al procesar el carrito en el servidor' })
     }
+  }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const ShoppingCart = require('../models/shoppingCart');
 
@@ -128,4 +61,3 @@ module.exports=class CarritoController{
 // }
 
 // module.exports = CarritoController;
-

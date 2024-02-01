@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 
-dotenv.config();
+dotenv.config()
 
-const db = process.env.MONGO_INITDB_ROOT_URL;
+const db = process.env.MONGO_INITDB_ROOT_URL
 
 mongoose.connect(db)
-.then(()=> console.log('Conexion exitosa'));
+  .then(() => console.log('Conexion exitosa'))
