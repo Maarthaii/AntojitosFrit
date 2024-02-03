@@ -4,7 +4,7 @@ const { setCart } = require('../models/carts')
 module.exports = class Controller {
   async addCarts (req, res) {
     try {
-      const userId = req.body.userId
+      const userId = req.session.userId
       const products = req.body.products
       const count = req.body.count
 

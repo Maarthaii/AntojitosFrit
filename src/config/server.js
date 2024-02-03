@@ -5,11 +5,11 @@ const session = require('express-session');
 
 const server = express()
 
-// server.use(session({
-//     secret: 'mi_secreto',
-//     resave: false,
-//     saveUninitialized: true
-// }));
+server.use(session({
+    secret: 'mi_secreto',
+    resave: false,
+    saveUninitialized: true
+}));
 
 server.use((req, res, next) => {
   console.log(`Solicitud recibida: ${req.method} ${req.url}`)

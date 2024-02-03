@@ -85,6 +85,7 @@ module.exports = class Controllers {
       .then((foundUser) => {
         if (foundUser) {
           console.log(foundUser)
+          
           res.render('userView', {
             user: foundUser,
             styles: [
@@ -92,7 +93,7 @@ module.exports = class Controllers {
               'usuario'
             ]
           })
-        // }
+          req.session.userId = foundUser.id;
         } else {
           console.log('Los datos ingresados son incorrectos')
           res.status(401).send('Credenciales Incorrectas')
