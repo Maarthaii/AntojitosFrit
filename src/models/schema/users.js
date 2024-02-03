@@ -1,23 +1,26 @@
 const mongoose = require('mongoose')
 
-const createUser = new mongoose.Schema({
-  nombre: {
+const schema = new mongoose.Schema({
+  name: {
     type: 'string',
     required: true
   },
-  telefono: {
+  phone: {
     type: 'string'
   },
-  correo: {
+  email: {
     type: 'string',
     required: true
   },
-  contraseña: {
+  password: {
     type: 'string',
     required: true
-  }
+  },
+  history: [{
+    type: mongoose.Schema.ObjectId,
+    required: true,
+    ref: 'carts'
+  }]
 })
 
-const Users = mongoose.models.user ?? mongoose.model('users', createUser)
-
-module.exports = Users
+module.exports = mongoose.models.user ?? mongoose.model('users', schema)

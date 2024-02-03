@@ -1,3 +1,4 @@
+const { getProducts } = require('../models/products')
 const { createUser, findUser } = require('../models/user')
 
 module.exports = class Controllers {
@@ -12,17 +13,23 @@ module.exports = class Controllers {
   }
 
   renderCatalogo (req, res) {
-    res.render('catalogo', {
-      styles: [
-        'estilos',
-        'catalogo',
-        'carrito'
-      ]
-    })
+    getProducts()
+      .then((products) => {
+        res.render('catalogo', {
+          title: 'Antojitos Frit',
+          styles: [
+            'estilos',
+            'catalogo',
+            'carrito'
+          ],
+          products
+        })
+      })
   }
 
   renderIniciarSesion (req, res) {
     res.render('iniciar_sesion', {
+      title: 'Antojitos Frit',
       styles: [
         'estilos',
         'inicio_usuario'
@@ -32,6 +39,7 @@ module.exports = class Controllers {
 
   renderRegistro (req, res) {
     res.render('registro', {
+      title: 'Antojitos Frit',
       styles: [
         'estilos',
         'inicio_usuario'
@@ -41,6 +49,7 @@ module.exports = class Controllers {
 
   renderVistaUsuario (req, res) {
     res.render('vista_usuario', {
+      title: 'Antojitos Frit',
       styles: [
         'estilos',
         'usuario'
@@ -50,10 +59,10 @@ module.exports = class Controllers {
 
   async addUser (req, res) {
     const newUser = {
-      nombre: req.body.nombre,
-      telefono: req.body.telefono,
-      correo: req.body.correo,
-      contraseña: req.body.contraseña
+      name: req.body.name,
+      phone: req.body.phone,
+      email: req.body.email,
+      password: req.body.password
     }
 
     try {
@@ -68,19 +77,14 @@ module.exports = class Controllers {
 
   loginUser (req, res) {
     const user = {
-      nombre: req.body.nombre,
-      telefono: req.body.telefono,
-      correo: req.body.correo,
-      contraseña: req.body.contraseña
+      email: req.body.email,
+      password: req.body.password
     }
 
     findUser(user)
       .then((foundUser) => {
         if (foundUser) {
-          // if (req.session) {
-          //     req.session.userId = foundUser._id;
-
-          console.log('Has iniciado sesion con exito')
+          console.log(foundUser)
           res.render('vista_usuario', {
             user: foundUser,
             styles: [

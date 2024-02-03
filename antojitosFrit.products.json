@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdbc"
+  },
+  "title": "Tequeño 1",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdbd"
+  },
+  "title": "Tequeño 2",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdbe"
+  },
+  "title": "Tequeño 3",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdbf"
+  },
+  "title": "Tequeño 4",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdc0"
+  },
+  "title": "Tequeño 5",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdc1"
+  },
+  "title": "Tequeño 6",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdc2"
+  },
+  "title": "Tequeño 7",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdc3"
+  },
+  "title": "Tequeño 8",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+},
+{
+  "_id": {
+    "$oid": "65bc264fb8188a73d2b9fdc4"
+  },
+  "title": "Tequeño 9",
+  "description": "Descripción",
+  "price": 15000,
+  "image": "/assets/img/tequeño.jpg"
+}]

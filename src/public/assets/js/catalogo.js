@@ -1,106 +1,24 @@
 // Estado del carrito
 let cartList = []
 
-// Lista de productos
-const itemsList = [
-  {
-    id: 0,
-    titulo: 'Tequeño 1',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-  }, {
-    id: 1,
-    titulo: 'Tequeño 2',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-  }, {
-    id: 2,
-    titulo: 'Tequeño 3',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-    
-  }, {
-    id: 3,
-    titulo: 'Tequeño 4',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-    
-  }, {
-    id: 4,
-    titulo: 'Tequeño 5',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-    
-  }, {
-    id: 5,
-    titulo: 'Tequeño 6',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-    
-  }, {
-    id: 6,
-    titulo: 'Tequeño 7',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-    
-  }, {
-    id: 7,
-    titulo: 'Tequeño 8',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-  }, {
-    id: 8,
-    titulo: 'Tequeño 9',
-    precio: 15000,
-    descripcion: 'Descripción',
-    imagenSrc: '/assets/img/tequeño.jpg'
-  }
-]
-
-const container = document.getElementById('contenedor-items')
-itemsList.map(item => {
-  container.innerHTML += `
-      <div class="item">
-          <img src="${item.imagenSrc}" alt="" class="img-item">
-          <span class="titulo-item">${item.titulo}</span>
-          <span class="precio-item">$${item.precio}</span>
-          <span class="descripcion-item"><p>${item.descripcion}</p></span>
-          <button class="boton-item" onclick="addToCart('${item.id}')">Agregar al Carrito</button>
-      </div>
-  `
-  return undefined
-})
-
 // eslint-disable-next-line no-unused-vars
-const addToCart = (id) => {
-  if (!cartList.some(item => item.id === id)) cartList.push({ id, count: 1 })
-
-  // if (carrito.length === 0 || carrito.every(item => item.id != id)) {
-  //   const item = itemsList.find(item => item.id == id)
-  //   agregarItemAlCarrito(item)
-  //   carrito.push(item)
-  // } else sumarCantidad(id)
+const addToCart = (product) => {
+  
+  if (!cartList.some(item => item.product.id === product.id))
+    cartList.push({ product, count: 1 })
   loadCart()
   showCart()
 }
 
 // eslint-disable-next-line no-unused-vars
 function deleteItem (id) {
-  cartList = cartList.filter(item => item.id !== id)
+  cartList = cartList.filter(item => item.product.id !== id)
   loadCart()
 }
 // eslint-disable-next-line no-unused-vars
 function addCount (id) {
   cartList = cartList.map(item =>
-    item.id === id
+    item.product.id === id
       ? { ...item, count: item.count + 1 }
       : item
   )
@@ -110,11 +28,10 @@ function addCount (id) {
 // eslint-disable-next-line no-unused-vars
 function sustractCount (id) {
   cartList = cartList.map(item =>
-    item.id === id
+    item.product.id === id
       ? { ...item, count: item.count - 1 }
       : item
   )
-  console.log(cartList)
   loadCart()
 }
 
@@ -125,17 +42,17 @@ function loadCart () {
   cartList.map((item) => {
     container.innerHTML += `
     <div class="carrito-item">
-      <img class="img-en-carrito" src="${itemsList[item.id].imagenSrc}" width="80px" alt="">
+      <img class="img-en-carrito" src="${item.product.image}" width="80px" alt="">
       <div class="carrito-item-detalles">
-      <span class="carrito-item-titulo">${itemsList[item.id].titulo}</span>
+      <span class="carrito-item-titulo">${item.product.title}</span>
       <div class="selector-cantidad">
-      <i class="fa-solid fa-minus restar-cantidad" onclick="sustractCount('${item.id}')"></i>
+      <i class="fa-solid fa-minus restar-cantidad" onclick="sustractCount('${item.product.id}')"></i>
               <input type="text" value="${item.count}" class="carrito-item-cantidad" disabled id="${'carrito-item-cantidad-' + item.id}">
-              <i class="fa-solid fa-plus sumar-cantidad" onclick="addCount('${item.id}')"></i>
+              <i class="fa-solid fa-plus sumar-cantidad" onclick="addCount('${item.product.id}')"></i>
           </div>
-          <span class="carrito-item-precio">${itemsList[item.id].precio}</span>
+          <span class="carrito-item-precio">${item.product.price}</span>
       </div>
-      <button class="btn-eliminar" onclick="deleteItem('${item.id}')">
+      <button class="btn-eliminar" onclick="deleteItem('${item.product.id}')">
           <i class="fa-solid fa-trash"></i>
       </button>
     </div>
@@ -158,34 +75,34 @@ function hiddeCart () {
 }
 
 document.getElementById('btn-pagar').addEventListener('click', () => {
-  alert('Gracias por su compra')
-  document.getElementById('carrito-items').innerHTML = ''
-  loadCart()
 
+  const userId = localStorage.getItem('userId')
+
+  if(userId == null) {
+    alert('Debe iniciar Sesión si desea realizar una compra')
+    return 0
+  }
+  
   fetch('/carritoController', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      products: cartList.map(product => ({ price: itemsList[product.id].precio, _id: product.id, name: itemsList[product.id].titulo })),
+      userId,
+      products: cartList.map(({ product }) => ({...product, _id: product.id})),
       count: cartList.length
     })
   })
-    .then(response => {
-      console.log('Respuesta del servidor:', response)
-      return response.json()
-    })
-    // .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       console.log('Carrito enviado exitosamente al servidor:', data)
       //
       if (data.mensaje) {
         alert(data.mensaje)
       }
+      cartList = []
+      loadCart()
     })
-    .catch(error => {
-      console.error('Error al enviar el carrito al servidor:', error)
-      alert('Error al procesar el carrito en el servidor')
-    })
+    .catch(error => console.error('Error al enviar el carrito al servidor:', error))
 })

@@ -7,7 +7,7 @@ const createUser = async (users) => {
 
 // Encontrar un usuario
 const findUser = async (user) => {
-  return await schema.findOne({ nombre: user.nombre, contraseña: user.contraseña })
+  return await schema.findOne({ email: user.email, password: user.password }).populate('history')
 }
 
 module.exports = {

@@ -13,7 +13,25 @@ block content
     
     section.contenedor
         //Contenedor de elementos
-        #contenedor-items.contenedor-items 
+        #contenedor-items.contenedor-items
+
+            each product in products
+                .item
+                    img(class="img-item" src=`${product.image}`)
+                    span(class="titulo-item")=product.title
+                    span(class="precio-item")=product.price
+                    span(class="description-item")=product.description
+                    button(class="boton-item" onclick=`
+                        addToCart({
+                            id: '${product.id}',
+                            title: '${product.title}',
+                            price: '${product.price}',
+                            description: '${product.description}',
+                            image: '${product.image}'
+                        })
+                    `) Agregar el carrito
+
+
         //Carrito de Compras
         #carrito.carrito
             .header-carrito
