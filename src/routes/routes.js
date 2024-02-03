@@ -8,12 +8,12 @@ const CarritoController = require('../controllers/cart')
 const carritoController = new CarritoController()
 
 router.get('/', controller.renderHome)
-router.get('/catalogo', controller.renderCatalogo)
-router.get('/iniciar_sesion', controller.renderIniciarSesion)
-router.get('/registro', controller.renderRegistro)
-router.get('/vista_usuario', controller.renderVistaUsuario)
-router.post('/registro', controller.addUser)
-router.post('/iniciar_sesion', controller.loginUser)
+router.get('/store', controller.renderStore)
+router.get('/logIn', controller.renderLogIn)
+router.get('/register', controller.renderRegister)
+router.get('/userView', controller.renderUserView)
+router.post('/register', controller.addUser)
+router.post('/logIn', controller.loginUser)
 router.post('/carritoController', carritoController.addCarts)
 
 // router.post('/cerrar', (req, res) => {

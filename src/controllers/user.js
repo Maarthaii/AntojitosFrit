@@ -12,10 +12,10 @@ module.exports = class Controllers {
     })
   }
 
-  renderCatalogo (req, res) {
+  renderStore (req, res) {
     getProducts()
       .then((products) => {
-        res.render('catalogo', {
+        res.render('store', {
           title: 'Antojitos Frit',
           styles: [
             'estilos',
@@ -27,8 +27,8 @@ module.exports = class Controllers {
       })
   }
 
-  renderIniciarSesion (req, res) {
-    res.render('iniciar_sesion', {
+  renderLogIn (req, res) {
+    res.render('logIn', {
       title: 'Antojitos Frit',
       styles: [
         'estilos',
@@ -37,8 +37,8 @@ module.exports = class Controllers {
     })
   }
 
-  renderRegistro (req, res) {
-    res.render('registro', {
+  renderRegister (req, res) {
+    res.render('register', {
       title: 'Antojitos Frit',
       styles: [
         'estilos',
@@ -47,8 +47,8 @@ module.exports = class Controllers {
     })
   }
 
-  renderVistaUsuario (req, res) {
-    res.render('vista_usuario', {
+  renderUserView (req, res) {
+    res.render('userView', {
       title: 'Antojitos Frit',
       styles: [
         'estilos',
@@ -68,7 +68,7 @@ module.exports = class Controllers {
     try {
       await createUser(newUser)
       console.log('Usuario registrado con éxito')
-      res.redirect('registro')
+      res.redirect('register')
     } catch (err) {
       console.error('Error al registrar usuario:', err.message)
       res.status(500).send('Error al registrar usuario: ' + err.message)
@@ -85,7 +85,7 @@ module.exports = class Controllers {
       .then((foundUser) => {
         if (foundUser) {
           console.log(foundUser)
-          res.render('vista_usuario', {
+          res.render('userView', {
             user: foundUser,
             styles: [
               'estilos',
