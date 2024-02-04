@@ -57,7 +57,17 @@ module.exports = class Controllers {
     })
   }
 
-  async addUser (req, res) {
+  renderLogout (req, res) {
+    res.render('logout', {
+      title: 'Antojitos Frit',
+      styles: [
+        'estilos',
+        'usuario'
+      ]
+    })
+  }
+
+  addUser (req, res) {
     const newUser = {
       name: req.body.name,
       phone: req.body.phone,
@@ -65,14 +75,15 @@ module.exports = class Controllers {
       password: req.body.password
     }
 
-    try {
-      await createUser(newUser)
-      console.log('Usuario registrado con éxito')
-      res.redirect('register')
-    } catch (err) {
-      console.error('Error al registrar usuario:', err.message)
-      res.status(500).send('Error al registrar usuario: ' + err.message)
-    }
+    createUser(newUser)
+      .then(() => {
+        console.log('Usuario registrado con éxito')
+        res.redirect('register')
+      })
+      .catch((err) => {
+        console.error('Error al registrar usuario:', err.message)
+        res.status(500).send('Error al registrar usuario: ' + err.message)
+      })
   }
 
   loginUser (req, res) {
@@ -85,7 +96,7 @@ module.exports = class Controllers {
       .then((foundUser) => {
         if (foundUser) {
           console.log(foundUser)
-          
+          req.session.userId = foundUser.id
           res.render('userView', {
             user: foundUser,
             styles: [
@@ -93,7 +104,6 @@ module.exports = class Controllers {
               'usuario'
             ]
           })
-          req.session.userId = foundUser.id;
         } else {
           console.log('Los datos ingresados son incorrectos')
           res.status(401).send('Credenciales Incorrectas')

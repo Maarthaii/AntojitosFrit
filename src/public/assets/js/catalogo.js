@@ -76,20 +76,12 @@ function hiddeCart () {
 
 document.getElementById('btn-pagar').addEventListener('click', () => {
 
-  const userId = localStorage.getItem('userId')
-
-  if(userId == null) {
-    alert('Debe iniciar Sesión si desea realizar una compra')
-    return 0
-  }
-  
   fetch('/carritoController', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      userId,
       products: cartList.map(({ product }) => ({...product, _id: product.id})),
       count: cartList.length
     })

@@ -4,36 +4,38 @@ block content
 
     div
         br
-        span  Bienvenido #{user.name}  
+        span Bienvenido #{user.name}  
 
     .usuario-contenedor
         .usuario-pedidos-historial
-            h4 Historial de tus pedidos
+            h3 Historial de tus pedidos
             br
-            p #{user.phone} --- #{user.email} --- #{user.password}
+            //- p #{user.phone} --- #{user.email} --- #{user.password}
 
             each item in user.history 
-                p Pediste los siguientes productos:
+                h5 Pediste:
                 div 
-                    each product in item.products 
-                        span=product.title
+                    if item.products.length === 0
+                        p No has realizados pedidos.
+                    else
+                        each product in item.products
+                            span.historial-pedidos=product.title
                 hr
- 
 
         .usuario-carrito
             .header-carrito
                 h2 Tu Carrito
-                p
-                | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
-            
-            button Agregar mas
-            button  Comprar 
+                //- p
+                //- | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
+            a(href='./store')
+                button Agregar 
+            //- button  Comprar 
 
     .usuario-pedidos-estado
     h4 Estado de tu pedido
     br
     p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac posuere augue, ac dictum diam. Fusce at lectus eleifend, venenatis est at, ullamcorper eros.
+        | El estado de tu pedido es: 
     hr
 
     input(type="hidden", id="userId", value=`${user.id}`)

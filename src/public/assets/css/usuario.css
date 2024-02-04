@@ -6,24 +6,25 @@
     justify-content:center;
     width:100%;    
     gap:10px;
-    padding: 10px;
+    padding: 10px; 
 }
 span{
     margin:10px;
-    font-size: 30px;
+    font-size: 35px;
 }
 .usuario-pedidos-historial{
     padding: 5px;
-    flex-basis: 65%;
+    flex-basis: 80%;
 }
 
 .usuario-pedidos-historial hr{
-    margin-top:10px;
+    margin-top:5px;
     margin-bottom:30px;
 }
 
 p{
-    font-size: 17px;
+    font-size: 20px;
+    font-weight: 200px ;
 }
 .usuario-pedidos-estado{
     margin: 10px;
@@ -33,7 +34,8 @@ p{
 }
 
 .usuario-carrito{
-    flex-basis: 40%;
+    margin-left: 50px;
+    flex-basis: 20%;
 
 }
 .header-carrito{
@@ -63,4 +65,8 @@ p{
     align-items: center;
     cursor: pointer;
     transition: .3s;
+}
+.historial-pedidos{
+    font-size: 20px;
+    padding-top: 40px;
 }

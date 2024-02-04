@@ -26,12 +26,18 @@ html(lang="en")
         ul.nav__list
           li
             a(href='./') Inicio
-          li
-            a(href='./store') Catalogo
-          li
-            a(href='./register') Registrate
-          li
-            a(href='./login') Iniciar sesion
+          if userId=true
+            li 
+              a(href='./userView') Perfil 
+            li 
+              a(href='./logout') Cerrar Sesion 
+          else
+            li
+              a(href='./store') Catalogo
+            li
+              a(href='./register') Registrate
+            li
+              a(href='./login') Iniciar sesion
     // Encabezado responsive
     header.header_img
       nav.nav_img
