@@ -26,12 +26,12 @@ html(lang="en")
         ul.nav__list
           li
             a(href='./') Inicio
-          if userId=true
+          if userId
             li 
               a(href='./userView') Perfil 
             li 
               a(href='./logout') Cerrar Sesion 
-          else
+          else 
             li
               a(href='./store') Catalogo
             li

@@ -1,5 +1,5 @@
 const { getProducts } = require('../models/products')
-const { createUser, findUser } = require('../models/user')
+const { createUser, findUser, findUserById } = require('../models/user')
 
 module.exports = class Controllers {
   renderHome (req, res) {
@@ -48,22 +48,44 @@ module.exports = class Controllers {
   }
 
   renderUserView (req, res) {
-    res.render('userView', {
-      title: 'Antojitos Frit',
-      styles: [
-        'estilos',
-        'usuario'
-      ]
-    })
+    const userId = req.session.userId
+
+    if (userId === undefined) {
+      res.render('logIn', {
+        title: 'Antojitos Frit',
+        styles: [
+          'estilos',
+          'inicio_usuario'
+        ]
+      })
+    } else {
+      findUserById(userId)
+        .then(user => {
+          res.render('userView', {
+            title: 'Antojitos Frit',
+            styles: [
+              'estilos',
+              'usuario'
+            ]
+          })
+        })
+    }
   }
 
   renderLogout (req, res) {
-    res.render('logout', {
-      title: 'Antojitos Frit',
-      styles: [
-        'estilos',
-        'usuario'
-      ]
+    req.session.destroy((err) => {
+      if ((err)) {
+        console.log('Ha ocurrido un error al cerrar sesion ', err)
+        res.status(500).send('Error al cerrar sesion')
+      } else {
+        res.render('logout', {
+          title: 'Antojitos Frit',
+          styles: [
+            'estilos',
+            'usuario'
+          ]
+        })
+      }
     })
   }
 

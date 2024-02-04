@@ -10,7 +10,13 @@ const findUser = async (user) => {
   return await schema.findOne({ email: user.email, password: user.password }).populate('history')
 }
 
+// Informacion de usuario por Id
+const findUserById = async (userId) => {
+  return await schema.findById(userId).populate('history')
+}
+
 module.exports = {
   createUser,
-  findUser
+  findUser,
+  findUserById
 }
