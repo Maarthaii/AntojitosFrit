@@ -2,13 +2,14 @@ extends layouts/main.pug
 
 block content
 
-    //Buscador
-    //- .buscador
-    //-     form
-    //-         input#search-input(type='text' placeholder='Buscar...' name='Búsqueda')
-    //-         button#search-button
-    //-             img(src='/assets/img/lupa.png' alt='Buscar')
-        
+    //- //Buscador
+    //- block scripts
+    //-     script(src='/assets/js/script.js')
+    //- form
+    //-     input#search-input(type='text' placeholder='Buscar...' name='Busqueda')
+    //-     button#search-button
+    //-     button#boton 
+    //-         img(src='/assets/img/lupa.png' alt='Buscar')
     //- #search-results
     
     section.contenedor
@@ -28,7 +29,8 @@ block content
                             price: '${product.price}',
                             description: '${product.description}',
                             image: '${product.image}'
-                        })
+                        }) 
+                        loadCart();
                     `) Agregar el carrito
 
 
@@ -41,7 +43,7 @@ block content
 
             .carrito-total
                 .fila
-                    strong Total
+                    strong 
                     .carrito-precio-total $120.000,00
                 button#btn-pagar.btn-pagar
                     | Comprar 

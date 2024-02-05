@@ -1,6 +1,35 @@
-extends layouts/main.pug 
+doctype html
+// 10/08/2023
 
-block content
+html(lang="en")
+
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+
+    each style in styles
+      link(rel='stylesheet' href=`/assets/css/${style}.css`)
+
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' integrity='sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    title Antojitos Frit
+
+
+  body 
+
+    // Encabezado
+    header.header_text
+      nav.nav
+        span#titulo #{title}
+        
+        // Navegadores
+        ul.nav__list
+            li
+                a(href='/') Inicio
+            li 
+                a(href='/userView') Perfil 
+            li 
+                a(href='/logout') Cerrar Sesion 
 
     div
         br
@@ -39,3 +68,19 @@ block content
     hr
 
     input(type="hidden", id="userId", value=`${user.id}`)
+
+    footer
+        .contenedores
+            .contenedor1
+                img(src='/assets/img/Logo.png')
+                p Deliciosos Deditos: &iexcl;Una explosion de sabor en cada modisco!
+            .contenedor2
+            img(src='/assets/img/instagram.png')
+            img(src='/assets/img/whatsapp.png')
+            .contenedor3
+            p Antojitos Frit
+            ul
+                li
+                a(href='./') Inicio
+                li Acerca de
+                li Productos

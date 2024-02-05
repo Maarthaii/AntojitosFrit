@@ -18,8 +18,7 @@ router.post('/logIn', controller.loginUser)
 router.post('/carritoController', carritoController.addCarts)
 router.get('/logout', function (req, res) {
   req.session.destroy()
-  res.redirect('/')
-  res.status(200).send('ok')
+  res.status(304).redirect('/')
 })
 // router.post('/cerrar', (req, res) => {
 //     // Eliminar el identificador de usuario de la sesión

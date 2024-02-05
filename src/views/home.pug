@@ -4,7 +4,8 @@ block content
 
   // 10/08/2023
   // -Video y diseño de encabezado
-
+  block scripts
+    script(src='/assets/js/script.js')
   .jumbotron
     video.jumbotron__video(playsinline='' autoplay='' muted='' loop='')
       source(src='/assets/video/pizza.mp4' type='video/mp4')
@@ -14,10 +15,11 @@ block content
   .buscador
     form
       input#search-input(type='text' placeholder='Buscar...' name='Busqueda')
-      button#search-button(type='button')
-        img(src='/assets/img/lupa.png' alt='Buscar')
+      button#search-button
+        button#boton 
+          img(src='/assets/img/lupa.png' alt='Buscar')
   #search-results
-  script(src='/assets/js/script.js')
+  //- script(src='/assets/js/script.js')
   // -Galeria de productos-
   section.contenedor
     // Contenedor de elementos

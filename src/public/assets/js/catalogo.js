@@ -35,6 +35,13 @@ function sustractCount (id) {
   loadCart()
 }
 
+function updateCartTotal() {
+  const totalElement = document.querySelector('.carrito-precio-total');
+  const total = cartList.reduce((acc, item) => acc + item.product.price * item.count, 0);
+  totalElement.textContent = `Total: $${total.toFixed(2)}`; // Formateamos el total como moneda
+}
+
+
 function loadCart () {
   const container = document.getElementById('carrito-items')
   container.innerHTML = ''
@@ -61,7 +68,9 @@ function loadCart () {
   })
 
   if (container.childNodes.length === 0) hiddeCart()
+  updateCartTotal();
 }
+
 
 // Funcion que hace visible el carrito
 function showCart () {

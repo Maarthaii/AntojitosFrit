@@ -1,73 +1,45 @@
-// 15 de agosto del 2023
-const searchInput = document.getElementById('search-input')
-const searchButton = document.getElementById('search-button')
-const searchResults = document.getElementById('search-results')
+document.addEventListener('DOMContentLoaded', function() {
 
-searchButton.addEventListener('click', (event) => {
-  event.preventDefault() // Evita el envío del formulario
-  console.log('Click')
+  document.getElementById('boton').addEventListener('click', function(event) {
+    event.preventDefault();
+    buscar();
+  });
+  
+function buscar() {
+  const searchTerm = document.getElementById('search-input').value.toLowerCase();
 
-  const searchTerm = searchInput.value.toLowerCase()
-  const bodyText = document.body.innerText.toLowerCase()
-  const matches = []
+  const bodyText = document.body.innerText.toLowerCase();
 
-  // const startIndex = 0
-  // let index
+  const matches = [];
 
-  // while ((index = bodyText.indexOf(searchTerm, startIndex)) !== -1) {
-  //     matches.push(index);
-  //     startIndex = index + searchTerm.length;
-  // }
+  let startIndex = 0;
+  let index;
+
+  while ((index = bodyText.indexOf(searchTerm, startIndex)) !== -1) {
+    matches.push(index);
+    startIndex = index + searchTerm.length;
+  }
+
+  mostrarResultados(matches, searchTerm);
+}
+
+function mostrarResultados(matches, searchTerm) {
+  const resultsContainer = document.getElementById('search-results');
 
   if (matches.length > 0) {
-    let resultsHTML = '<p>Se encontraron coincidencias en los siguientes lugares:</p>'
-    resultsHTML += '<ul>'
-
+    let resultsHTML = `<p>La palabra que buscas coincide en estos lugares: </p>`;
+    resultsHTML += '<ul>';
+    console.log(resultsHTML)
     matches.forEach(matchIndex => {
-      const context = bodyText.substr(matchIndex - 20, 40) // Muestra 20 caracteres antes y después
-      resultsHTML += `<li>...${context.replace(searchTerm, `<strong>${searchTerm}</strong>`)}...</li>`
-    })
+      const context = document.body.innerText.substr(matchIndex - 20, 40); 
+      resultsHTML += `<li>...${context.replace(searchTerm, `<strong>${searchTerm}</strong>`)}...</li>`;
+    });
 
-    resultsHTML += '</ul>'
-    searchResults.innerHTML = resultsHTML
+    resultsHTML += '</ul>';
+    resultsContainer.innerHTML = resultsHTML;
   } else {
-    searchResults.innerHTML = `<p>No se encontraron resultados para: ${searchTerm}</p>`
+    resultsContainer.innerHTML = `<p>No se encontraron resultados para: ${searchTerm}</p>`;
   }
-})
+}
 
-// 15 de agosto del 2023
-/*
-        const searchInput = document.getElementById('search-input');
-        const searchButton = document.getElementById('search-button');
-        const searchResults = document.getElementById('search-results');
-
-        searchButton.addEventListener('click', function (event) {
-            event.preventDefault(); // Evita el envío del formulario
-
-            const searchTerm = searchInput.value.toLowerCase();
-            const bodyText = document.body.innerText.toLowerCase();
-            const matches = [];
-
-            let startIndex = 0;
-            let index;
-
-            while ((index = bodyText.indexOf(searchTerm, startIndex)) !== -1) {
-                matches.push(index);
-                startIndex = index + searchTerm.length;
-            }
-
-            if (matches.length > 0) {
-                let resultsHTML = '<p>Se encontraron coincidencias en los siguientes lugares:</p>';
-                resultsHTML += '<ul>';
-
-                matches.forEach(matchIndex => {
-                    const context = bodyText.substr(matchIndex - 20, 40); // Muestra 20 caracteres antes y después
-                    resultsHTML += `<li>...${context.replace(searchTerm, `<strong>${searchTerm}</strong>`)}...</li>`;
-                });
-
-                resultsHTML += '</ul>';
-                searchResults.innerHTML = resultsHTML;
-            } else {
-                searchResults.innerHTML = `<p>No se encontraron resultados para: ${searchTerm}</p>`;
-            }
-        }); */
+});
