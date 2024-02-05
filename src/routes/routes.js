@@ -12,11 +12,15 @@ router.get('/store', controller.renderStore)
 router.get('/logIn', controller.renderLogIn)
 router.get('/register', controller.renderRegister)
 router.get('/userView', controller.renderUserView)
-router.get('/logout', controller.renderLogout)
+// router.get('/logout', controller.renderLogout)
 router.post('/register', controller.addUser)
 router.post('/logIn', controller.loginUser)
 router.post('/carritoController', carritoController.addCarts)
-
+router.get('/logout', function (req, res) {
+  req.session.destroy()
+  res.redirect('/')
+  res.status(200).send('ok')
+})
 // router.post('/cerrar', (req, res) => {
 //     // Eliminar el identificador de usuario de la sesión
 //     req.session.destroy(err => {
