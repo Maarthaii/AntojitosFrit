@@ -17,10 +17,3 @@ const setCart = async (products, userId) => {
 module.exports = {
   setCart
 }
-
-// const mongoose = require('mongoose');
-// const shoppingCartSchema = require('./schema/shoppingCarts');
-
-// const ShoppingCart = mongoose.model('ShoppingCart', shoppingCartSchema);
-
-// module.exports = ShoppingCart;

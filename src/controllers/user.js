@@ -72,28 +72,6 @@ module.exports = class Controllers {
     }
   }
 
-  // renderLogout (req, res) {
-  //   req.session.destroy((err) => {
-  //     if ((err)) {
-  //       console.log('Ha ocurrido un error al cerrar sesion ', err)
-  //       res.status(500).send('Error al cerrar sesion')
-  //     } else {
-  //       res.render('logout', {
-  //         title: 'Antojitos Frit',
-  //         styles: [
-  //           'estilos',
-  //           'usuario'
-  //         ]
-  //       })
-  //     }
-  //   })
-  // }
-
-  // renderLogout (req, res) {
-  //   req.session.destroy()
-  //   res.status(200).send('ok')
-  // }
-
   addUser (req, res) {
     const newUser = {
       name: req.body.name,
