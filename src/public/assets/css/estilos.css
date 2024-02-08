@@ -300,3 +300,31 @@ footer img{
     }
 
 }
+
+.message{
+    display: none;
+    color: white;
+
+}
+
+.message.seeMessage{
+    display: block;
+    min-width: 300px;
+    font-size: 15px;
+    color: white;
+}
+
+#about{
+    cursor: pointer;
+    color: white;
+
+}
+
+.infoResponse p{
+    color: #D95203;
+    font-size: 16px;
+}
+
+.infoMessage p{ 
+    color:#F29F04;
+}

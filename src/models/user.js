@@ -6,14 +6,12 @@ const createUser = async (users) => {
 }
 
 // Encontrar un usuario
-const findUser = async (user) => {
-  return await schema.findOne({ email: user.email, password: user.password }).populate('history')
-}
+const findUser = async (user) =>
+  schema.findOne({ email: user.email, password: user.password }).populate('history')
 
 // Informacion de usuario por Id
-const findUserById = async (userId) => {
-  return await schema.findById(userId).populate('history')
-}
+const findUserById = (userId) =>
+  schema.findById(userId).populate('history')
 
 module.exports = {
   createUser,

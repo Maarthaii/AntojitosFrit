@@ -54,33 +54,42 @@ html(lang="en")
         .usuario-carrito
             .header-carrito
                 h2 Tu Carrito
+            #carrito-items
+
                 //- p
                 //- | Donec facilisis ipsum vestibulum, ullamcorper libero in, pharetra mauris. Phasellus et vestibulum ligula.
             a(href='./store')
                 button Agregar 
-            //- button  Comprar 
+            button  Comprar 
 
-    .usuario-pedidos-estado
-    h4 Estado de tu pedido
-    br
-    p
-        | El estado de tu pedido es: 
-    hr
+    //- .usuario-pedidos-estado
+    //- h4 Estado de tu pedido
+    //- br
+    //- p
+    //-     | El estado de tu pedido es: 
+    //- hr
 
-    input(type="hidden", id="userId", value=`${user.id}`)
+    //- input(type="hidden", id="userId", value=`${user.id}`)
 
+     // Pie de pagina
     footer
         .contenedores
             .contenedor1
                 img(src='/assets/img/Logo.png')
                 p Deliciosos Deditos: &iexcl;Una explosion de sabor en cada modisco!
             .contenedor2
-            img(src='/assets/img/instagram.png')
-            img(src='/assets/img/whatsapp.png')
+                img(src='/assets/img/instagram.png')
+                a(href='https://wa.me/+573213232151', target='_blank')
+                    img(src='/assets/img/whatsapp.png')
             .contenedor3
-            p Antojitos Frit
-            ul
-                li
-                a(href='./') Inicio
-                li Acerca de
-                li Productos
+                //- p Antojitos Frit
+                ul
+                    li
+                        a(href='./') Inicio
+                    li#about Acerca de
+                        .message 
+                            p "¡Bienvenido a Antojitos Frit, tu nuevo destino digital para disfrutar de deliciosos antojitos!"
+                    li 
+                        a(href='/store') Productos
+    block scripts
+            script(src='/assets/js/script.js')

@@ -26,14 +26,15 @@ html(lang="en")
         ul.nav__list
           li
             a(href='/') Inicio
+          li
+            a(href='/store') Catalogo
+
           if userId
             li 
               a(href='/userView') Perfil 
             li 
               a(href='/logout') Cerrar Sesion 
           else 
-            li
-              a(href='/store') Catalogo
             li
               a(href='/register') Registrate
             li
@@ -67,11 +68,15 @@ html(lang="en")
           p Deliciosos Deditos: &iexcl;Una explosion de sabor en cada modisco!
         .contenedor2
           img(src='/assets/img/instagram.png')
-          img(src='/assets/img/whatsapp.png')
+          a(href='https://wa.me/+573213232151', target='_blank')
+            img(src='/assets/img/whatsapp.png')
         .contenedor3
-          p Antojitos Frit
+          //- p Antojitos Frit
           ul
             li
               a(href='./') Inicio
-            li Acerca de
-            li Productos
+            li#about Acerca de
+              .message 
+                p "¡Bienvenido a Antojitos Frit, tu nuevo destino digital para disfrutar de deliciosos antojitos!"
+            li 
+              a(href='/store') Productos

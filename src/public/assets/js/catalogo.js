@@ -83,6 +83,7 @@ function hiddeCart () {
   // }
 }
 
+
 document.getElementById('btn-pagar').addEventListener('click', () => {
 
   fetch('/carritoController', {

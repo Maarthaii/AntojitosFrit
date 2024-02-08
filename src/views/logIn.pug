@@ -15,7 +15,11 @@ block content
             em Antojitos Frit. 
             | Si aún no tienes una cuenta, puedes registrarte fácilmente.
             p
+        
         form(action='/logIn' method='post')
             input(type="text" placeholder="Correo" name="email")
             input(type="password" placeholder="Contraseña" name="password")
             button(type='submit') Iniciar sesion 
+            .infoResponse
+                if errorMessage 
+                    p.error-message #{errorMessage}

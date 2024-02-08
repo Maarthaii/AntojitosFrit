@@ -6,7 +6,7 @@ block content
     .jumbotron
         video.jumbotron__video_login(playsinline='' autoplay='' muted='' loop='') 
             source(src='/assets/video/pizza.mp4' type='video/mp4')
-
+    
     //Seccion de registro
     .registro
         img(src='/assets/img/agregar.png')
@@ -16,6 +16,9 @@ block content
             em Antojitos Frit
             | al registrarte, podras gestionar tus pedidos y recibir notificaiones.
             p -
+        .infoMessage 
+            if infoMessage 
+                p #{infoMessage}
         form(action='/register' method='post')
             input(type='text' placeholder='Nombre' name='name' required)
             input(type='phone' placeholder='Telefono' name='phone' required)

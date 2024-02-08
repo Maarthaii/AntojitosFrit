@@ -13,8 +13,9 @@ module.exports = class Controller {
       }, userId)
 
       if (savedCart) {
-        // console.log('Se ha guardado la información del carrito de compras', savedCart)
+        console.log('Se ha guardado la información del carrito de compras', savedCart)
         return res.json({ mensaje: 'Carrito creado correctamente', carrito: savedCart })
+        // return res.json({ carrito: savedCart })
       }
       res.status(500).json({ error: 'Error al guardar el carrito en el servidor' })
     } catch (error) {

@@ -42,4 +42,14 @@ function mostrarResultados(matches, searchTerm) {
   }
 }
 
+var about = document.getElementById('about');
+var message = document.querySelector('.message');
+
+about.addEventListener('click', function(event){
+  event.preventDefault();
+
+  message.classList.toggle('seeMessage');
+})
+
 });
+

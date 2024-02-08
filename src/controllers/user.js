@@ -3,8 +3,11 @@ const { createUser, findUser, findUserById } = require('../models/user')
 
 module.exports = class Controllers {
   renderHome (req, res) {
+    const userId = req.session.userId
+
     res.render('home', {
       title: 'Antojitos Frit',
+      userId,
       styles: [
         'estilos',
         'catalogo'
@@ -13,10 +16,13 @@ module.exports = class Controllers {
   }
 
   renderStore (req, res) {
+    const userId = req.session.userId
+
     getProducts()
       .then((products) => {
         res.render('store', {
           title: 'Antojitos Frit',
+          userId,
           styles: [
             'estilos',
             'catalogo',
@@ -50,19 +56,15 @@ module.exports = class Controllers {
   renderUserView (req, res) {
     const userId = req.session.userId
 
-    if (userId === undefined) {
-      res.render('logIn', {
-        title: 'Antojitos Frit',
-        styles: [
-          'estilos',
-          'inicio_usuario'
-        ]
-      })
+    if (userId === undefined || userId === null) {
+      res.redirect('/logIn')
     } else {
       findUserById(userId)
         .then(user => {
           res.render('userView', {
             title: 'Antojitos Frit',
+            userId,
+            user,
             styles: [
               'estilos',
               'usuario'
@@ -83,7 +85,15 @@ module.exports = class Controllers {
     createUser(newUser)
       .then(() => {
         console.log('Usuario registrado con éxito')
-        res.redirect('register')
+        const infoMessage = 'El usuario ha sido registrado exitosamente'
+        res.render('register', {
+          title: 'Antojitos Frit',
+          styles: [
+            'estilos',
+            'inicio_usuario'
+          ],
+          infoMessage
+        })
       })
       .catch((err) => {
         console.error('Error al registrar usuario:', err.message)
@@ -100,23 +110,25 @@ module.exports = class Controllers {
     findUser(user)
       .then((foundUser) => {
         if (foundUser) {
-          console.log(foundUser)
           req.session.userId = foundUser.id
-          res.render('userView', {
-            user: foundUser,
-            styles: [
-              'estilos',
-              'usuario'
-            ]
-          })
+          res.redirect('/userView')
         } else {
           console.log('Los datos ingresados son incorrectos')
-          res.status(401).send('Credenciales Incorrectas')
+          const errorMessage = 'Credenciales Incorrectas'
+          res.render('logIn', {
+            title: 'Antojitos Frit',
+            styles: [
+              'estilos',
+              'inicio_usuario'
+            ],
+            errorMessage
+          })
+          // res.status(401).send('Credenciales Incorrectas')
         }
       })
       .catch((err) => {
         console.log('Error al iniciar sesion', err)
-        res.status(500).send('Error: ' + err.message)
+        // res.status(500).send('Error: ' + err.message)
       })
   }
 }
